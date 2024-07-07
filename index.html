@@ -2,13 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link href="https://cdn.bootcdn.net/ajax/libs/pretty-checkbox/3.0.3/pretty-checkbox.min.css" rel="stylesheet">
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zane's site</title>
+    <link rel="stylesheet" href="./src/assets/css/base.css">
+    <script src="./src/plugins/PerspectiveTransform.js"></script>
+    <script src="./src/plugins/TweenMax.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
+    
+    <section class="planet-box">
+      <div class="planet-globe">
+        <div class="planet-globe-doms-container"></div>
+        <div class="planet-globe-halo"></div>
+      </div>
+    </section>
+    <script src="./src/plugins/Init.main.js"></script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
 import Tag from './components/Tag.vue';
+import NavBar from './components/NavBar/NavBar.vue'
 import DarkSwitch from './components/DarkSwitch.vue';
 </script>
 
 <template>
-  <Tag>adftag</Tag>
-  <Tag>sfasdfs</Tag>
-  <DarkSwitch></DarkSwitch>
-  <HelloWorld msg="Vite + Vue" />
-  
+  <!-- <Tag>adftag</Tag>
+  <Tag>sfasdfs</Tag> -->
+  <!-- <DarkSwitch /> -->
+  <NavBar></NavBar>
 </template>
 
 <style scoped>

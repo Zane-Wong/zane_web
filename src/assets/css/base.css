@@ -1,0 +1,147 @@
+/*全局去除默认样式*/ 
+* {
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+	font-size: var(--font-default);
+}
+
+body {
+    color: var(--gray12);
+    background-color: var(--gray2);
+}
+
+.dark body{
+    color: var(--gray2);
+    background-color: var(--gray12);
+}
+
+/*a标签去除默认样式*/
+a {
+ 	text-decoration: none;
+ 	color:#333;
+}
+/*设置使所有a标签的四种状态都和本身颜色保持一致*/
+ a:hover, a:visited, a:link, a:active {
+    color:#333;
+}
+
+/*li*/
+ul,ol {
+	list-style: none;
+}
+
+/*img*/
+img {
+    vertical-align: top;
+    border: none;
+}
+
+/*button*/
+.button {
+    border:0;
+    background-color:none;
+    outline:none;
+    -webkit-appearance: none;/*用于IOS下移除原生样式*/
+}
+
+/*select*/
+select {
+    border: none;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    padding-right: 14px;
+}
+
+/*h1*/
+h1,h2,h3,h4,h5,h6 {
+	font-weight:normal;
+}
+
+/*input，textarea*/
+input,textarea {
+    outline: none;
+    border: none;
+}
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+/*斜体 i*/
+i{
+	font-style: normal;
+}
+
+/*table*/
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+/*去除input[type=number]加减号*/
+/* 谷歌 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* 火狐 */
+input {
+    -moz-appearance:textfield;
+}
+
+/* 旋转地球背景图 */
+body {
+    background: url('../img/globe.jpg');
+    background-size: cover;
+    background-attachment: fixed
+} 
+
+.planet-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.planet-box .planet-globe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+}
+
+.planet-box .planet-globe-pole {
+    position: absolute;
+    top: -265px;
+    left: -265px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50% 50%;
+    background-color: #fff;
+}
+
+.planet-box .planet-globe-doms-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+}
+
+.planet-box .planet-globe-halo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -233px;
+    margin-left: -240px;
+    width: 490px;
+    height: 470px;
+    background-size: contain;
+}
