@@ -36,7 +36,7 @@ import DarkSwitch from '../DarkSwitch.vue';
 
 }
 .nav {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     position: fixed;
     z-index: 100;
@@ -77,7 +77,7 @@ import DarkSwitch from '../DarkSwitch.vue';
                 // 白底黑字
                 backdrop-filter: blur(10px);
                 color: black;
-                background-color: rgba(10,10,10,0.1);
+                background-color: rgba(5,5,5,0.15);
             }
         }
 
