@@ -80,6 +80,7 @@
   --height-small: 20px;
   --height-default: 30px;
   --height-large: 40px;
+  --height-max: 60px;
 }
 
 ::-webkit-scrollbar-track {
