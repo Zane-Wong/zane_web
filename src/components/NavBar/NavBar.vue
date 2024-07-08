@@ -1,11 +1,11 @@
 <template>
     <div class="nav">
         <div class="left">
-            <div class="navItem logo">
+            <div class="nav-item logo">
                 <img src="../../assets/img/avatar.png" alt="zane">
             </div>
             <ul>
-                <li class="navItem" v-for="navItem in navList">
+                <li class="nav-item" v-for="navItem in navList">
                     <a :href="navItem.url">{{ navItem.title }}</a>
                 </li>
             </ul>
@@ -22,56 +22,68 @@ import DarkSwitch from '../DarkSwitch.vue';
 </script>
 
 <style lang="scss" scoped>
-.nav{
+.dark .nav{
     background-color: rgba(0,0,0,0.1); 
+    .left {
+        li {
+            // 黑底白字
+            a:hover {
+                color: white;
+                background-color: rgba(255,255,255,0.15);
+            }
+        }
+    }
+
+}
+.nav {
+    background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     position: fixed;
     z-index: 100;
     width: 100%;
-    // height: var(--height-large);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    .left{
-        margin-left: var(--height-max);
+    justify-content: space-around;
+    .left {
+        margin-left: var(--margin-large);
         display: flex;
         align-items: center;
-        li{
-            display: inline-block;
-            a{
-                padding: var(--padding-small) var(--padding-default);
-                // background-color: pink;
-                font-size: larger;line-height: 1;
-                border-radius: var(--radius-small);
-                transition: all 0.3s;
-                backdrop-filter: blur(5px);
-            }
-
-            a:hover{
-                color: white;
-                background-color: rgba(66, 66, 66, 0.605); 
+        .nav-item {
+            margin: var(--margin-default) var(--margin-default);
+        }
+        .logo {
+            border-radius: 50%;
+            overflow: hidden;
+            height: var(--height-large);
+            min-width: var(--height-large);
+            max-width: var(--height-large);
+            img {
+                height: 100%;
+                height: 100%;
             }
         }
+
+        li {
+            display: inline-flex;
+            a {
+                // color: var(--gray2);
+                border-radius: var(--radius-small);
+                font-size: var(--font-large);
+                line-height: var(--font-large);
+                padding: var(--padding-default) var(--padding-max) var(--padding-large);
+                font-weight: 500;
+            }
+            a:hover {
+                // 白底黑字
+                backdrop-filter: blur(10px);
+                color: black;
+                background-color: rgba(10,10,10,0.1);
+            }
+        }
+
     }
-    .right{
-        margin-right: var(--height-max);
+    .right {
+        margin-right: var(--margin-large);
     }
 }
-.navItem{
-    margin: var(--margin-small) var(--margin-default) var(--margin-small) 0;
-}
-.logo{
-    border-radius: 50%;
-    overflow: hidden;
-    height: var(--height-default);
-    min-width: var(--height-default);
-}
-.logo img{
-    height: 100%;
-    height: 100%;
-}
-/* .dark .nav{
-    background-color: var(--gray14);
-} */
 </style>

@@ -67,6 +67,7 @@
   --padding-small: 5px;
   --padding-default: 8px;
   --padding-large: 10px;
+  --padding-max: 20px;
 
   --margin-small: 5px;
   --margin-default: 10px;
@@ -74,7 +75,8 @@
 
   --font-small: 12px;
   --font-default: 14px;
-  --font-large: 18px;
+  --font-large: 16px;
+  --font-max: 18px;
 
   --line-height: 1;
   --height-small: 20px;
