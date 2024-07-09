@@ -4,15 +4,16 @@
             <div class="nav-item logo">
                 <img src="../../assets/img/avatar.png" alt="zane">
             </div>
+        </div>
+        <div class="right">
             <ul>
                 <li class="nav-item" v-for="navItem in navList">
                     <a :href="navItem.url">{{ navItem.title }}</a>
                 </li>
             </ul>
-        </div>
-        <div class="right">
             <DarkSwitch></DarkSwitch>
         </div>
+        
     </div>
 </template>
 
@@ -24,7 +25,7 @@ import DarkSwitch from '../DarkSwitch.vue';
 <style lang="scss" scoped>
 .dark .nav{
     background-color: rgba(0,0,0,0.1); 
-    .left {
+    .right {
         li {
             // 黑底白字
             a:hover {
@@ -45,12 +46,7 @@ import DarkSwitch from '../DarkSwitch.vue';
     align-items: center;
     justify-content: space-around;
     .left {
-        margin-left: var(--margin-large);
-        display: flex;
-        align-items: center;
-        .nav-item {
-            margin: var(--margin-default) var(--margin-default);
-        }
+        // margin-right: var(--margin-large);
         .logo {
             border-radius: 50%;
             overflow: hidden;
@@ -59,10 +55,14 @@ import DarkSwitch from '../DarkSwitch.vue';
             max-width: var(--height-large);
             img {
                 height: 100%;
-                height: 100%;
+                width: 100%;
             }
         }
-
+    }
+    .right {
+        // margin-left: var(--margin-large);
+        display: flex;
+        align-items: center;
         li {
             display: inline-flex;
             a {
@@ -82,8 +82,8 @@ import DarkSwitch from '../DarkSwitch.vue';
         }
 
     }
-    .right {
-        margin-right: var(--margin-large);
-    }
+}
+.nav-item {
+    margin: var(--margin-default) var(--margin-default);
 }
 </style>
