@@ -56,13 +56,19 @@ function switchColorMode(event: any): void{
   vertical-align: middle;
   flex-wrap: nowrap;
   user-select: none;
+  padding-bottom: calc(var(--margin-small));
+  transition: all 200ms ease-in-out;
+}
+.dark-checkbox:hover{
+  color: var(--orange5);
 }
 input[type=checkbox] {
   display: none;
 }
 .dark-checkbox label{
   cursor: pointer;
-  padding: 0 var(--padding-small);
-  font-size: var(--font-large);
+  padding: 0 var(--padding-large);
+  line-height:  calc(var(--font-small)*2);
+  font-size: calc(var(--font-small)*2);
 }
 </style>

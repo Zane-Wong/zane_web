@@ -9,13 +9,12 @@
             <ul>
                 <li class="nav-item" v-for="navItem in navList">
                     <a :href="navItem.url">
-                        
                         {{ navItem.title }}
                         <div class="bottom-line"></div>
                     </a>
                 </li>
             </ul>
-            <DarkSwitch></DarkSwitch>
+            <DarkSwitch class="nav-item"></DarkSwitch>
         </div> 
     </div>
 </template>
@@ -27,20 +26,20 @@ import DarkSwitch from '../DarkSwitch.vue';
 
 <style lang="scss" scoped>
 .dark .nav{
-    background-color: rgba(0,0,0,0.1); 
+    background-color: rgba(0,0,0,0.2); 
     .right {
         li {
             // 黑底白字
             a:hover {
                 color: white;
-                background-color: rgba(255,255,255,0.15);
+                background-color: rgba(255,255,255,0.2);
             }
         }
     }
 
 }
 .nav {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     position: fixed;
     z-index: 100;
@@ -50,6 +49,8 @@ import DarkSwitch from '../DarkSwitch.vue';
     justify-content: space-around;
     .left {
         // margin-left: var(--margin-large);
+        display: flex;
+        align-items: center;
         .logo {
             border-radius: 50%;
             overflow: hidden;
@@ -61,6 +62,15 @@ import DarkSwitch from '../DarkSwitch.vue';
                 width: 100%;
             }
         }
+        
+    }
+    .left::after {
+        content: "Zane";
+        font-size: calc(var(--font-small)*2);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background: linear-gradient(to right, var(--green5), var(--blue5));
+        -webkit-background-clip: text;
+        color: transparent;
     }
     .right {
         // margin-right: var(--margin-large);
@@ -69,7 +79,6 @@ import DarkSwitch from '../DarkSwitch.vue';
         li {
             display: inline-flex;
             a {
-                // color: var(--gray2);
                 border-radius: var(--radius-small);
                 font-size: var(--font-large);
                 line-height: var(--font-large);
@@ -77,18 +86,18 @@ import DarkSwitch from '../DarkSwitch.vue';
                 font-weight: 500;
                 .bottom-line {
                     width: 0;
-                    height: 3px;
+                    height: 2px;
                     border-radius: 2px;
                     margin-top: var(--margin-small);
                     background-color: var(--green5);
-                    transition: all 300ms ease-in-out;
+                    transition: all 200ms ease-in-out;
                 }
             }
             a:hover {
                 // 白底黑字
                 backdrop-filter: blur(10px);
                 color: black;
-                background-color: rgba(5,5,5,0.15);
+                background-color: rgba(0,0,0,0.21);
                 .bottom-line {
                     width: 100%;
                 }
@@ -98,6 +107,6 @@ import DarkSwitch from '../DarkSwitch.vue';
     }
 }
 .nav-item {
-    margin: var(--margin-default) var(--margin-default);
+    margin: var(--margin-default) var(--margin-small);
 }
 </style>

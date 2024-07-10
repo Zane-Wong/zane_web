@@ -85,18 +85,29 @@
   --height-max: 60px;
 }
 
+/**
+ * 滚动条相关样式
+ */
 ::-webkit-scrollbar-track {
     /* background: transparent; */
     background-color: #0d152c;
 }
-
 ::-webkit-scrollbar {
     /* width: 8px;
     height: 8px; */
     display: none;
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius: 4px;
 }
+
+/**
+ * 自定义字体（得意黑）
+ */
+ @font-face {
+    font-family: "SmileySans";
+    src:
+      /* url("./assets/fonts/SmileySans-Oblique.ttf.woff2") format("woff2"), */
+      url("./assets/fonts/SmileySans-Oblique.otf.woff2") format("woff2");
+  }

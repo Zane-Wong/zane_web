@@ -7,4 +7,5 @@ export const navList : {
     {title:'博客',url:'blogs'},
     {title:'关于',url:'about'}, 
     {title:'作者',url:'author'},
+    {title:'其他',url:'others'}, 
 ];

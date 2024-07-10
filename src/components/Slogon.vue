@@ -10,8 +10,8 @@ export default{
     data(){
         return {
             slogonPrefix: 'Hello!',//AI时代
-            mySlogon: '这里是 孤影风晨 · WANG ZHUO 的小站',
-            slogonSuffix: ''//拥抱AI, 探索未来! 打不过, 就加入!
+            mySlogon: '这里是 Zane · WANG ZHUO 的小站',
+            slogonSuffix: '拥抱AI, 探索未来!'//拥抱AI, 探索未来! 打不过, 就加入!
         }
     }
 }
@@ -19,32 +19,31 @@ export default{
 <style lang="scss">
 .slogon-area {
     height: 100vh;
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
-    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 0.8);
     letter-spacing: 10px;
+    font-family: 'SmileySans' ;
+    text-align: center;
     h1 {
-        // display: flex;
-        // max-width: calc(var(--font-default)*30);
-        font-size: calc(var(--font-default)*5);
-        // justify-content: center;
-        padding: calc(var(--height-max)*2) calc(var(--font-large)*4);
-        font-weight: 500;
+        font-size: calc(var(--font-default)*6);
+        font-weight: 600;
+        background: linear-gradient(to left, var(--blue3), var(--green3));
+        -webkit-background-clip: text;
+        color: transparent;
     }
     p {
         padding: 0 calc(var(--font-default)*5);
-        font-size:var(--font-small);
+        font-size:var(--font-large);
     }
     h2 {
-        // max-width: calc(var(--font-default)*30);
-        font-size: calc(var(--font-default)*10);
-        // justify-content: center;
-        padding-top: calc(var(--height-max)*2) ;
-        padding-left: var(--height-max);
+        font-size: calc(var(--font-default)*6);
         letter-spacing: 0.2;
-        
-        font-weight: 500;
+        background: linear-gradient(to right, var(--blue3), var(--orange3));
+        -webkit-background-clip: text;
+        color: transparent;
     }
 }
 </style>
