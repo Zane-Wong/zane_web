@@ -8,12 +8,15 @@
         <div class="right">
             <ul>
                 <li class="nav-item" v-for="navItem in navList">
-                    <a :href="navItem.url">{{ navItem.title }}</a>
+                    <a :href="navItem.url">
+                        
+                        {{ navItem.title }}
+                        <div class="bottom-line"></div>
+                    </a>
                 </li>
             </ul>
             <DarkSwitch></DarkSwitch>
-        </div>
-        
+        </div> 
     </div>
 </template>
 
@@ -46,7 +49,7 @@ import DarkSwitch from '../DarkSwitch.vue';
     align-items: center;
     justify-content: space-around;
     .left {
-        // margin-right: var(--margin-large);
+        // margin-left: var(--margin-large);
         .logo {
             border-radius: 50%;
             overflow: hidden;
@@ -60,7 +63,7 @@ import DarkSwitch from '../DarkSwitch.vue';
         }
     }
     .right {
-        // margin-left: var(--margin-large);
+        // margin-right: var(--margin-large);
         display: flex;
         align-items: center;
         li {
@@ -70,14 +73,25 @@ import DarkSwitch from '../DarkSwitch.vue';
                 border-radius: var(--radius-small);
                 font-size: var(--font-large);
                 line-height: var(--font-large);
-                padding: var(--padding-default) var(--padding-max) var(--padding-large);
+                padding: var(--padding-default) var(--padding-max);
                 font-weight: 500;
+                .bottom-line {
+                    width: 0;
+                    height: 3px;
+                    border-radius: 2px;
+                    margin-top: var(--margin-small);
+                    background-color: var(--green5);
+                    transition: all 300ms ease-in-out;
+                }
             }
             a:hover {
                 // 白底黑字
                 backdrop-filter: blur(10px);
                 color: black;
                 background-color: rgba(5,5,5,0.15);
+                .bottom-line {
+                    width: 100%;
+                }
             }
         }
 
