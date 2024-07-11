@@ -1,6 +1,6 @@
 <template>
     <div class="slogon-area">
-        <h1>{{ slogonPrefix }}</h1>
+        <h1>{{ hello }}</h1>
         <p>{{ mySlogon }}</p>
         <h2 v-if="slogonSuffix">{{ slogonSuffix }}</h2>
     </div>
@@ -11,8 +11,24 @@ export default{
         return {
             slogonPrefix: 'Hello!',//AI时代
             mySlogon: '这里是 Zane · WANG ZHUO 的小站',
-            slogonSuffix: '拥抱AI, 探索未来!'//拥抱AI, 探索未来! 打不过, 就加入!
+            slogonSuffix: '拥抱AI, 探索未来!',//拥抱AI, 探索未来! 打不过, 就加入!
+            hello: '',
+            timer: null,
+            count: 0
         }
+    },
+    methods:{
+        typewriter(){
+            this.count++;
+            let i = this.count % this.slogonPrefix.length;
+            this.hello = this.slogonPrefix.substring(0,i+1)
+        },
+    },
+    mounted(){
+        this.timer = setInterval(this.typewriter,500);
+    },
+    unmounted(){
+        clearInterval(this.timer);
     }
 }
 </script>
@@ -33,6 +49,20 @@ export default{
         background: linear-gradient(to left, var(--blue3), var(--green3));
         -webkit-background-clip: text;
         color: transparent;
+    }
+    @keyframes blink {
+        from, to {
+            color: var(--green3);
+        }
+        50% {
+            color: var(--blue5);
+        }
+    }
+    h1::after {
+        content:"_";
+        // -webkit-background-clip: text;
+        font-size: 50%;
+        animation: blink 600ms infinite;
     }
     p {
         padding: 0 calc(var(--font-default)*5);
