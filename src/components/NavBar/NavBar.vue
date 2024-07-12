@@ -15,18 +15,18 @@
                 </li>
             </ul>
             <DarkSwitch class="nav-item"></DarkSwitch>
-        </div> 
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import {navList} from './data';
+import { navList } from './data';
 import DarkSwitch from '../DarkSwitch.vue';
 </script>
 
 <style lang="scss" scoped>
 .dark .nav{
-    background-color: rgba(0,0,0,0.2); 
+    background-color: rgba(0,0,0,0.2);
     .right {
         li {
             // 黑底白字
@@ -41,6 +41,7 @@ import DarkSwitch from '../DarkSwitch.vue';
 .nav {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: fixed;
     z-index: 100;
     width: 100%;
@@ -62,7 +63,7 @@ import DarkSwitch from '../DarkSwitch.vue';
                 width: 100%;
             }
         }
-        
+
     }
     .left::after {
         content: "Zane";

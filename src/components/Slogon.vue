@@ -9,7 +9,7 @@
 export default{
     data(){
         return {
-            slogonPrefix: 'Hello!',//AI时代
+            slogonPrefix: '  Hello!',//AI时代
             mySlogon: '这里是 Zane · WANG ZHUO 的小站',
             slogonSuffix: '拥抱AI, 探索未来!',//拥抱AI, 探索未来! 打不过, 就加入!
             hello: '',
@@ -25,7 +25,7 @@ export default{
         },
     },
     mounted(){
-        this.timer = setInterval(this.typewriter,500);
+        this.timer = setInterval(this.typewriter,400);
     },
     unmounted(){
         clearInterval(this.timer);
@@ -70,7 +70,7 @@ export default{
     }
     h2 {
         font-size: calc(var(--font-default)*6);
-        letter-spacing: 0.2;
+        letter-spacing: var(--font-large);
         background: linear-gradient(to right, var(--blue3), var(--orange3));
         -webkit-background-clip: text;
         color: transparent;

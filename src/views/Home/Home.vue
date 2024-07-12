@@ -2,8 +2,7 @@
     <div class="main-container">
         <!-- <div class="slogan-container"> -->
         <Slogon></Slogon>
-        <!-- </div> -->
-        {{ title }}main Container
+<!--        <main class="main-body"></main>-->
     </div>
 </template>
 <script>
