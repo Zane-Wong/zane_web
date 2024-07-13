@@ -49,6 +49,7 @@ export default{
         background: linear-gradient(to left, var(--blue3), var(--green3));
         -webkit-background-clip: text;
         color: transparent;
+        margin-top: var(--height-default);
     }
     @keyframes blink {
         from, to {
@@ -74,6 +75,7 @@ export default{
         background: linear-gradient(to right, var(--blue3), var(--orange3));
         -webkit-background-clip: text;
         color: transparent;
+        margin-top: var(--height-default);
     }
 }
 </style>

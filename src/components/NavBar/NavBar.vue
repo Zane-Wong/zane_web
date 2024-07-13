@@ -40,8 +40,8 @@ import DarkSwitch from '../DarkSwitch.vue';
 }
 .nav {
     background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--blur-large));
+    -webkit-backdrop-filter: blur(var(--blur-large));
     position: fixed;
     z-index: 100;
     width: 100%;
@@ -53,11 +53,11 @@ import DarkSwitch from '../DarkSwitch.vue';
         display: flex;
         align-items: center;
         .logo {
-            border-radius: 50%;
+            border-radius: 45%;
             overflow: hidden;
-            height: var(--height-large);
-            min-width: var(--height-large);
-            max-width: var(--height-large);
+            height: var(--height-default);
+            min-width: var(--height-default);
+            max-width: var(--height-default);
             img {
                 height: 100%;
                 width: 100%;
@@ -96,7 +96,7 @@ import DarkSwitch from '../DarkSwitch.vue';
             }
             a:hover {
                 // 白底黑字
-                backdrop-filter: blur(10px);
+                backdrop-filter: blur(var(--blur-large));
                 color: black;
                 background-color: rgba(0,0,0,0.21);
                 .bottom-line {

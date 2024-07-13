@@ -61,7 +61,8 @@
 
   --radius-small: 4px;
   --radius-default: 8px;
-  --radius-large: 10px;
+  --radius-large: 12px;
+  --radius-max: 16px;
   --radius-round: 50%;
 
   --padding-small: 5px;
@@ -76,13 +77,26 @@
   --font-small: 12px;
   --font-default: 14px;
   --font-large: 16px;
-  --font-max: 18px;
+  --font-huge: 18px;
+  --font-max: 20px;
 
   --line-height: 1;
   --height-small: 20px;
-  --height-default: 30px;
-  --height-large: 40px;
-  --height-max: 60px;
+  --height-default: 40px;
+  --height-large: 60px;
+  --height-huge: 120px;
+  --height-max: 200px;
+
+  --width-small: 30px;
+  --width-default: 60px;
+  --width-large: 120px;
+  --width-huge: 200px;
+  --width-max: 280px;
+
+  --blur-small: 3px;
+  --blur-default: 5px;
+  --blur-large: 10px;
+  --blur-max: 20px;
 }
 
 /**
@@ -111,3 +125,71 @@
       /* url("./assets/fonts/SmileySans-Oblique.ttf.woff2") format("woff2"), */
       url("./assets/fonts/SmileySans-Oblique.otf.woff2") format("woff2");
   }
+/**
+ * 内小边距
+ */
+.p-5{
+    padding: 5px;
+}
+.p-10{
+    padding: 10px;
+}
+.p-{
+    padding: var(--font-default);
+}
+/**
+ * 上小边距
+ */
+.m-t-5{
+    margin-top: 5px;
+}
+.m-t-10{
+    margin-top: 10px;
+}
+.m-t{
+    margin-top: var(--font-default);
+}
+.m-t-20{
+    margin-top: 20px;
+}
+
+/**
+ * 右小边距
+ */
+ .m-r-5{
+    margin-right: 5px;
+ }
+ .m-r-10{
+    margin-right: 10px;
+ }
+ .m-r{
+    margin-right: var(--font-default);
+ }
+
+/**
+ * 左小边距
+ */
+ .m-l-5{
+    margin-left: 5px;
+ }
+ .m-l-10{
+    margin-left: 10px;
+ }
+ .m-l{
+    margin-left: var(--font-default);
+ }
+/**
+ * 下小边距
+ */
+.m-b-5{
+    margin-bottom: 5px;
+}
+.m-b-10{
+    margin-bottom: 10px;
+}
+.m-b{
+    margin-bottom: var(--font-default);
+}
+.m-b-20{
+    margin-bottom: 20px;
+}
