@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import Tag from './components/Tag.vue';
 import NavBar from './components/NavBar/NavBar.vue';
 import DarkSwitch from './components/DarkSwitch.vue';

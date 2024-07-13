@@ -17,6 +17,7 @@ import Card from '../../components/Card/Card.vue';
 import SectionTitle from '../../components/SectionTitle.vue';
 import {projects} from '../../components/Card/data';
 export default{
+    name:'Home',
     components:{
         Slogon,
         SectionTitle,
