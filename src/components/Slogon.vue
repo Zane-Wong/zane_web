@@ -43,6 +43,7 @@ export default{
     letter-spacing: 10px;
     font-family: 'SmileySans' ;
     text-align: center;
+    user-select: none;
     h1 {
         font-size: calc(var(--font-default)*6);
         font-weight: 600;

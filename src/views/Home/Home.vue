@@ -2,13 +2,20 @@
     <div class="main-container">
         <Slogon id="index"></Slogon>
         <!-- <section class = "main" id="tools"></section> -->
-        <main class = "main" id="projects">
-            <SectionTitle title="标题"></SectionTitle>
-            <ul class="card-list">
-                <Card v-for="project in projects" class="m-t m-b m-l m-r" :data="project"></Card>
-            </ul>
+        <main class = "main">
+            <section id="projects">
+                <SectionTitle title="项目"></SectionTitle>
+                <ul class="card-list">
+                    <Card v-for="project in projects" class="m-t m-b m-l m-r" :data="project"></Card>
+                </ul>
+            </section>
+            <section id="tools">
+                <SectionTitle title="工具"></SectionTitle>
+            </section>
         </main>
-        <footer id="about"></footer>
+        <footer id="about">
+            <Foot></Foot>
+        </footer>
     </div>
 </template>
 <script>
@@ -16,25 +23,26 @@ import Slogon from '../../components/Slogon.vue';
 import Card from '../../components/Card/Card.vue';
 import SectionTitle from '../../components/SectionTitle.vue';
 import {projects} from '../../components/Card/data';
+import Foot from '../../components/Foot/Foot.vue';
 export default{
     name:'Home',
     components:{
         Slogon,
         SectionTitle,
-        Card
+        Card,
+        Foot
     },
     data(){
         return {
             title: "Powered by wangzhuo",
             projects: [
-                { title: '标题', 
-                coverImg:'https://www.calibrate.be/sites/default/files/styles/large/public/2020-01/vue-01.png?itok=XlGRr8mq', 
-                url:'to project',
-                subTitle: '子标题', 
-                description: '描述特别长的情况如何，让我试一下，再长点，再仓点仓带你按时发放阿达阿斯蒂芬啊啊打发打发 阿斯顿发放', 
-                tags:[1,2,3], 
-                platform:'平台'},
-                { title: '标题', url:'go to ...', coverImg:'https://www.calibrate.be/sites/default/files/styles/large/public/2020-01/vue-01.png?itok=XlGRr8mq', subTitle: '子标题', description: '描述', tags:[2,3,4], platform:'平台'}
+                { title: '', 
+                coverImg:'', 
+                url:'',
+                subTitle: '', 
+                description: '', 
+                tags:[], 
+                platform:''}
             ]
         }
     },
@@ -66,6 +74,8 @@ export default{
 }
 footer {
     height: 30vh;
-
+    color: var(--gray4);
+    // padding: var(--padding-large);
 }
+
 </style>

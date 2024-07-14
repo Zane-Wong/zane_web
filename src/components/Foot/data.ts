@@ -1,0 +1,26 @@
+export const about = [
+    {
+        title:'© '+new Date().getFullYear()+' Zane',
+        data:[
+            {label:'版权所有',value:'',type:'watermark'},
+            {label:'备案',value:'',type:'watermark'},
+            {label:'',value:'',type:'watermark'}
+        ]
+    },
+    {
+        title:'关于作者',
+        data:[
+            {label:'邮箱',value:'mail_zhuo@163.com',type:'text'},
+            {label:'Github',value:'github_url',type:'link'},
+            {label:'个人主页',value:'author_url',type:'link'}
+        ]
+    },
+    // {
+    //     title:'友情链接',
+    //     data:[
+    //         {label:'link1',value:'url1',type:'link'},
+    //         {label:'link2',value:'url2',type:'link'},
+    //         {label:'link3',value:'url3',type:'link'}
+    //     ]
+    // }
+]
