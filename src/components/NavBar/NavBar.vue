@@ -22,6 +22,13 @@
 <script setup lang="ts">
 import { navList } from './data';
 import DarkSwitch from '../DarkSwitch.vue';
+// export default {
+//     name: 'NavBar',
+//     created(){
+//         console.log(this);
+//     }
+// }
+// console.log((document.getElementsByClassName("nav")))
 </script>
 
 <style lang="scss" scoped>

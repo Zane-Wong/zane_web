@@ -8,12 +8,14 @@
 
 body {
     color: var(--gray12);
-    background-color: var(--gray2);
+    /* background-color: var(--gray2); */
+    width: 100vw;
+    max-width: 100vw;
 }
 
 .dark body{
     color: var(--gray2);
-    background-color: var(--gray12);
+    /* background-color: var(--gray12); */
 }
 
 /*a标签去除默认样式*/
@@ -110,16 +112,21 @@ input {
 
 /* 旋转地球背景图 */
 body {
+    height: 100vh;
     background: url('../img/globe.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color:rgb(5, 6, 11);
     background-attachment: fixed
 } 
 
 .planet-box {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 2;
+    overflow: hidden;
 }
 
 .planet-box .planet-globe {
@@ -137,7 +144,6 @@ body {
     width: 360px;
     height: 360px;
     border-radius: 50% 50%;
-    background-color: #fff;
 }
 
 .planet-box .planet-globe-doms-container {

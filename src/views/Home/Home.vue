@@ -46,7 +46,7 @@ export default{
 <style lang="scss" scoped>
 .main-container {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     z-index: 5;
 }   
 .main {
