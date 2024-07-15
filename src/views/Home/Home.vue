@@ -73,7 +73,6 @@ export default{
     background-color: rgba(0,0,0,0.3);
 }
 footer {
-    height: 30vh;
     color: var(--gray4);
     // padding: var(--padding-large);
 }

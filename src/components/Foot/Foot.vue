@@ -27,7 +27,7 @@ dl{
     // flex-wrap: nowrap;
     div{
         // flex:1;
-        margin: calc(1*var(--margin-max)) var(--margin-large);
+        margin: calc(2*var(--margin-large)) calc(2.5*var(--margin-large));
         dt{
             font-weight: 600;
             line-height: calc(2*var(--font-max));

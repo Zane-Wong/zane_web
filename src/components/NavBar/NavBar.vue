@@ -1,5 +1,5 @@
 <template>
-    <div class="nav">
+    <div class="nav" :style="scrolling">
         <div class="left">
             <div class="nav-item logo">
                 <img src="../../assets/img/avatar.png" alt="zane">
@@ -19,16 +19,29 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { navList } from './data';
 import DarkSwitch from '../DarkSwitch.vue';
-// export default {
-//     name: 'NavBar',
-//     created(){
-//         console.log(this);
-//     }
-// }
-// console.log((document.getElementsByClassName("nav")))
+import {onMounted, onUnmounted, ref} from 'vue';
+const scrolling = ref({
+  top: '-100%'
+});
+// const opacity=ref(0);
+function pageScroll(){
+  let scrollTop = window.scrollY;
+  // opacity.value = Math.abs(Math.round(scrollTop / 250));
+  if(scrollTop>0) {
+    scrolling.value.top='0';
+  }else{
+    scrolling.value.top='-100%';
+  }
+}
+onMounted(()=>{
+  window.addEventListener('scroll',pageScroll)
+})
+onUnmounted(()=>{
+  window.removeEventListener('scroll',pageScroll)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -50,11 +63,14 @@ import DarkSwitch from '../DarkSwitch.vue';
     backdrop-filter: blur(var(--blur-large));
     -webkit-backdrop-filter: blur(var(--blur-large));
     position: fixed;
+    top: -100%;//-100%;
+    left: 0;
     z-index: 100;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    transition: top 0.3s ease-in-out; // 过度
     .left {
         // margin-left: var(--margin-large);
         display: flex;
