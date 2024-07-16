@@ -13,11 +13,13 @@
                 <SectionTitle title="工具"></SectionTitle>
                 
             </section>
+           
         </main>
         <footer id="about">
             <Foot></Foot>
         </footer>
     </div>
+    <!-- <test></test> -->
 </template>
 <script>
 import Slogon from '../../components/Slogon.vue';
@@ -25,15 +27,15 @@ import Card from '../../components/Card/Card.vue';
 import SectionTitle from '../../components/SectionTitle.vue';
 import {projects} from '../../components/Card/data';
 import Foot from '../../components/Foot/Foot.vue';
-import Gallery from '../../components/Gallery/Gallery.vue';
+// import test from '../../components/Gallery/test.vue';
 export default{
     name:'Home',
     components:{
         Slogon,
         SectionTitle,
         Card,
-        Foot,
-        Gallery
+        Foot
+        //, test
     },
     data(){
         return {
@@ -46,7 +48,8 @@ export default{
                 description: '', 
                 tags:[], 
                 platform:''}
-            ]
+            ],
+
         }
     },
     created(){
@@ -64,7 +67,7 @@ export default{
     // height: 100vh;
     padding: var(--padding-large) var(--padding-default);
     background-color: rgba(255,255,255,0.8);
-    backdrop-filter: blur(var(--blur-large));
+    // backdrop-filter: blur(var(--blur-large));
     .card-list{
         // background-color: gray; 
         display:flex;
