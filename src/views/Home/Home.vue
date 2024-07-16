@@ -11,6 +11,7 @@
             </section>
             <section id="tools">
                 <SectionTitle title="工具"></SectionTitle>
+                
             </section>
         </main>
         <footer id="about">
@@ -24,13 +25,15 @@ import Card from '../../components/Card/Card.vue';
 import SectionTitle from '../../components/SectionTitle.vue';
 import {projects} from '../../components/Card/data';
 import Foot from '../../components/Foot/Foot.vue';
+import Gallery from '../../components/Gallery/Gallery.vue';
 export default{
     name:'Home',
     components:{
         Slogon,
         SectionTitle,
         Card,
-        Foot
+        Foot,
+        Gallery
     },
     data(){
         return {

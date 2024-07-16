@@ -24,23 +24,24 @@ import { navList } from './data';
 import DarkSwitch from '../DarkSwitch.vue';
 import {onMounted, onUnmounted, ref} from 'vue';
 const scrolling = ref({
-  top: '-100%'
+    top: '-100%'
 });
 // const opacity=ref(0);
 function pageScroll(){
-  let scrollTop = window.scrollY;
-  // opacity.value = Math.abs(Math.round(scrollTop / 250));
-  if(scrollTop>0) {
-    scrolling.value.top='0';
-  }else{
-    scrolling.value.top='-100%';
-  }
+    let scrollTop = window.scrollY;
+    // opacity.value = Math.abs(Math.round(scrollTop / 250));
+    if(scrollTop > 0 && scrolling.value.top !== '0') {
+        scrolling.value.top='0';
+    }
+    if(scrollTop <= 0 && scrolling.value.top !== '-100%'){
+        scrolling.value.top='-100%';
+    }
 }
 onMounted(()=>{
-  window.addEventListener('scroll',pageScroll)
+    window.addEventListener('scroll',pageScroll)
 })
 onUnmounted(()=>{
-  window.removeEventListener('scroll',pageScroll)
+    window.removeEventListener('scroll',pageScroll)
 })
 </script>
 
@@ -70,7 +71,7 @@ onUnmounted(()=>{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    transition: top 0.3s ease-in-out; // 过度
+    transition: top 400ms ease-in-out; // 过度
     .left {
         // margin-left: var(--margin-large);
         display: flex;

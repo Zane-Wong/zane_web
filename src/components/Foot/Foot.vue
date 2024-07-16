@@ -9,7 +9,7 @@
 </template>
 <script>
 import { about } from './data';
-console.log(about);
+
 export default{
     name:'Foot',
     data(){
