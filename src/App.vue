@@ -1,6 +1,7 @@
 <script setup>
 import Tag from './components/Tag.vue';
 import NavBar from './components/NavBar/NavBar.vue';
+import Navbar2 from './components/NavBar/Navbar2.vue';
 import DarkSwitch from './components/DarkSwitch.vue';
 import Home from './views/Home/Home.vue';
 
@@ -10,7 +11,8 @@ import Home from './views/Home/Home.vue';
   <!-- <Tag>adftag</Tag>
   <Tag>sfasdfs</Tag> -->
   <!-- <DarkSwitch /> -->
-  <NavBar></NavBar>
+  <!-- <NavBar></NavBar> -->
+  <Navbar2/>
   <Home></Home>
 </template>
 
