@@ -71,7 +71,7 @@ onUnmounted(()=>{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    transition: top 800ms ease-in-out; // 过度
+    transition: top 400ms ease-in-out; // 过度
     .left {
         // margin-left: var(--margin-large);
         display: flex;
@@ -128,7 +128,6 @@ onUnmounted(()=>{
                 }
             }
         }
-
     }
 }
 .nav-item {
