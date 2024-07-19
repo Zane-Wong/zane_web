@@ -11,9 +11,11 @@
             </section>
             <section id="tools">
                 <SectionTitle title="工具"></SectionTitle>
-                
             </section>
-           
+            <section id="author">
+                <SectionTitle title="作者"></SectionTitle>
+                <Author></Author>
+            </section>
         </main>
         <footer id="about">
             <Foot></Foot>
@@ -25,6 +27,7 @@
 import Slogon from '../../components/Slogon.vue';
 import Card from '../../components/Card/Card.vue';
 import SectionTitle from '../../components/SectionTitle.vue';
+import Author from '../Author/Author.vue';
 import {projects} from '../../components/Card/data';
 import Foot from '../../components/Foot/Foot.vue';
 // import test from '../../components/Gallery/test.vue';
@@ -34,6 +37,7 @@ export default{
         Slogon,
         SectionTitle,
         Card,
+        Author,
         Foot
         //, test
     },
