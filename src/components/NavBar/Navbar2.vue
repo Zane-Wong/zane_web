@@ -1,7 +1,7 @@
 <template>
     <div class="navbar" :class="{fixed: isFixed}" :style="{opacity: navbarOpacity}">
         <div class="left">
-            <div class="nav-item logo">
+            <div class="logo">
                 <img src="../../assets/img/avatar.png" alt="zane">
             </div>
         </div>
@@ -12,8 +12,8 @@
                         {{ nav.title }}
                     </a>
                 </li>
+              <DarkSwitch ></DarkSwitch>
             </ul>
-            <DarkSwitch class="nav-item"></DarkSwitch>
         </div>
     </div>
 </template>
@@ -58,48 +58,43 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.fixed{
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
 .navbar{
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(var(--blur-large));
-    transition: all 0.4s ease-out;
-    display: flex;
-    justify-content: space-around;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .left{
+    display: inline-flex;
     align-items: center;
-    .left{
-        .logo{
-            border-radius: 50%;
-            overflow: hidden;
-            width: var(--height-large);
-            min-width: var(--height-large);
-            height: var(--height-large);
-            img{
-                width: 100%;
-            }
-        }
+    //margin-left: var(--margin-small);
+    background-color: pink;
+    .logo{
+      width: var(--height-large);
+      min-width: var(--height-large);
+      height: var(--height-large);
+      min-height: var(--height-large);
+      border-radius: 50%;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
     }
-    .right{
-        ul{
-            background-color: pink;
-            display:flex;
-            justify-content: space-around;
-            a{
-                padding: var(--padding-default) var(--padding-max);
-                font-size:var(--font-large);
-                background-color: green;
-                color: var(--blue5);
-            }
-        }
-    }
-
-}
-.fixed {
-    position: fixed;
-    z-index: 100;
-    top: -100%; //0
-    // transform: translateY(0);
-}
-.nav-item {
-    margin: var(--margin-default) var(--margin-default);
+  }
+  .left::after{
+    content:'Zane';
+    font-size: var(--font-huge);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: var(--padding-default);
+    font-weight: 600;
+  }
+  .right{
+    background-color: yellow;
+    //margin-right: var(--margin-small);
+  }
 }
 </style>

@@ -67,8 +67,8 @@ input[type=checkbox] {
 }
 .dark-checkbox label{
   cursor: pointer;
-  padding: 0 var(--padding-large);
   line-height:  calc(var(--font-small)*2);
   font-size: calc(var(--font-small)*2);
+  padding-top: 2px;
 }
 </style>
