@@ -66,7 +66,7 @@ export default{
 .main {
     // height: 100vh;
     padding: var(--padding-large) var(--padding-default);
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.88);
     // backdrop-filter: blur(var(--blur-large));
     .card-list{
         // background-color: gray; 
@@ -76,7 +76,7 @@ export default{
     }
 }
 .dark .main {
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.8);
 }
 footer {
     color: var(--gray4);

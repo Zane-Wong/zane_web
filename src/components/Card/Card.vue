@@ -38,16 +38,16 @@ li{
     height: calc(2*var(--height-huge));
     width: var(--width-max);
     min-width: var(--width-max);
-    background-color: rgba(200,200,200,0.18);
+    background-color: rgba(255,255,255,0.84);
     backdrop-filter: blur(var(--blur-small));
     border-radius: var(--radius-max);
     overflow: hidden;
     border: var(--border-narrow) solid var(--gray4);
     transition: transform 300ms ease-in-out;
-    box-shadow:  0px  0px 20px rgba(120, 120, 120, 0.2);
+    box-shadow:  0px  0px 20px rgba(120, 120, 120, 0.19);
     .cover-img{
         position: relative;
-        background-color: rgba(240,240,240,0.8);
+        background-color: rgba(255, 255, 255, 0.1);
         /* backdrop-filter: blur(var(--blur-small)); */
         height: calc(var(--height-huge));
         overflow: hidden;
@@ -97,8 +97,10 @@ li:hover{
     /* cursor: pointer; */
 }
 .dark li{
+    background-color: rgba(160,160,160,0.16);
     /* background-color: rgba(245,245,245,0.16); */
     border-color: var(--gray10);
+    box-shadow:  0px  0px 20px rgba(72, 72, 72, 0.19);
     .cover-img{
         background-color: rgba(15,15,15,0.2);
         .cover-mask{

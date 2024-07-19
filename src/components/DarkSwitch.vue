@@ -53,7 +53,7 @@ function switchColorMode(event: any): void{
 .dark-checkbox {
   display:inline-flex;
   align-items: center;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   flex-wrap: nowrap;
   user-select: none;
   padding-bottom: calc(var(--margin-small));
