@@ -11,7 +11,7 @@ export default{
         return {
             slogonPrefix: '  Hello!',//AI时代
             mySlogon: '这里是 Zane · WANG ZHUO 的小站',
-            slogonSuffix: '拥抱AI, 探索未来!',//拥抱AI, 探索未来! 打不过, 就加入!
+            slogonSuffix: '用技术实现创意!',//拥抱AI, 探索未来!
             hello: '',
             timer: null,
             count: 0

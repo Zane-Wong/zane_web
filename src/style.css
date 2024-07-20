@@ -98,6 +98,14 @@
   --blur-default: 5px;
   --blur-large: 10px;
   --blur-max: 20px;
+
+  --zane-card-height: calc(2*var(--height-huge)); /*240px*/
+  --zane-card-width: var(--width-max); /*280px*/
+  --zane-card-bgc: rgba(255,255,255,0.84); /*浅色模式*/
+  --zane-card-bd-filter: blur(var(--blur-default)); /*blur(5px)*/
+  --zane-card-cover-bgc: rgba(255,255,255,0.2);
+  --zane-dark-card-bgc: rgba(160,160,160,0.16);
+  --zane-dark-card-bgc: rgba(0,0,0,0.4);
 }
 
 /**

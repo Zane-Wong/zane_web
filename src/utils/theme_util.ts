@@ -3,6 +3,7 @@ const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 /** 切换至浅色模式 */
 export function switchToLightMode(): void {
   document.documentElement.classList.remove("dark");
+
 }
 /** 切换至深色模式 */
 export function switchToDarkMode(): void {

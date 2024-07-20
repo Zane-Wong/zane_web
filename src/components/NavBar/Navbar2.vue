@@ -134,7 +134,7 @@ export default {
 }
 
 .dark .navbar{
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,0,0,0.26);
     .right{
         // ul{
             li{
