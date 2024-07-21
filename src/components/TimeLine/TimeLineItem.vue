@@ -1,37 +1,94 @@
 <template>
-    <li>timelineItem---li</li>
+    <li>
+        <div class="decoration">
+            <div class="ico">⚪</div>
+            <div class="line"></div>
+        </div>
+        <div class="intro">
+            <h3>{{ new Date().toLocaleDateString() }} - {{ new Date().toLocaleDateString() }}</h3>
+            <h2>事件</h2>
+            <p>描述</p>
+            <slot name="imgs"></slot>
+        </div>
+    </li>
 </template>
 <script setup>
-// console.log(this.$refs);
 console.log("TimeLineItem");
 </script>
-<style scoped>
-/* li{
-    background-color: rgba(255,255,255,0.8);
-}
-.dark li{
-    background-color: rgba(0,0,0,0.2);
-} */
-li{
-    background: url(./imgs/1.png) top right contain cover;
-    height: var(--height-huge);
-}
+<style lang="scss" scoped>
+
+
 @media screen and (max-width: 768px) {
     li{
-        background-color: #fff;
-        
+        background-image: url(./imgs/1.png);
     }
-    .drak li{
-        background-color: #000000;
+    li:nth-child(2n+1){
+        background-color: url(./imgs/2.png);
     }
+    li:nth-child(3n+2){
+        background-image: url(./imgs/3.png);
+    }
+    li:nth-child(4n+3){
+        background-image: url(./imgs/4.png);
+    }
+    li:nth-child(5n+4){
+        background-image: url(./imgs/5.png);
+    }
+    li:nth-child(6n+5){
+        background-image: url(./imgs/6.png);
+    } 
+
+    li{
+        background: top right / contain no-repeat;
+        height: var(--height-huge);
+        display: flex;
+        /* border-radius: var(--radius-default); */
+        .decoration{
+            // background-color: pink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 var(--margin-small);
+            .line{
+                border: 1px solid var(--blue5);
+                height: 100%;
+                margin: var(--padding-small) 0;
+            }
+        }
+        .intro{
+            // background-color: yellow;
+            h3{
+                color: var(--gray10);
+            }
+            h2{
+                // background-color: green;
+                margin: var(--margin-small) 0;
+                font-size: var(--font-large);
+                font-weight: 600;
+            }
+        }
+    }
+    
+    .dark li{
+        .decoration{
+            .line{
+                border-color: var(--blue3);
+            }
+        }
+        .intro{
+            h3{
+                color: var(--gray8);
+            }
+        }
+    }
+
+
 }
 @media screen and (min-width: 768px) {
-    li{
+    /* li{
         background-color: blue;
-    }
-    .drak li{
-        background-color: rgba(0,0,0,1);
-    }
+    } */
+
 }
 
 </style>
