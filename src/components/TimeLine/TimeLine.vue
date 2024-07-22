@@ -1,5 +1,5 @@
 <template>
-    <ul id="ul" ref="ul">
+    <ul>
         <slot></slot>
     </ul>
 </template>
@@ -11,5 +11,6 @@ onMounted(()=>{
     
 });
 </script>
-<style>
+<style scoped>
+
 </style>

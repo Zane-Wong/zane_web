@@ -5,21 +5,47 @@
             <div class="line"></div>
         </div>
         <div class="intro">
-            <h3>{{ new Date().toLocaleDateString() }} - {{ new Date().toLocaleDateString() }}</h3>
-            <h2>事件</h2>
-            <p>描述</p>
-            <slot name="imgs"></slot>
+            <h3>{{ data.start_time }} - {{ data.end_time }}</h3>
+            <h2>{{ data.title }}</h2>
+            <p>{{ data.description }}</p>
+            <slot name="img">
+            </slot>
         </div>
     </li>
 </template>
-<script setup>
-console.log("TimeLineItem");
+<script lang="ts" setup>
+import { defineProps ,PropType } from "vue";
+import { TimeLineItemType } from "./data";
+defineProps({
+    data:{
+        type: {
+            start_time: String,
+            end_tiem: String,
+            title: String,
+            description: String
+           //, imgs: Array<{desc:String,url:String}>
+        } //Object as PropType<TimeLineItemType>
+    }
+});
 </script>
 <style lang="scss" scoped>
-
-
+// .intro{
+//     background-color: var(--gray2);
+//     border-radius: var(--radius-default);
+//     background: top right / contain no-repeat;
+//     width: 100%;
+//     padding: 0 var(--padding-default);
+//     margin: var(--font-default) 0;
+//     background-color: #fff;
+// }
+.dark .intro{
+    // background-color: var(--gray12);
+}
+li{
+    margin: var(--margin-default) 0;
+}
 @media screen and (max-width: 768px) {
-    li{
+    li:nth-child(n){
         background-image: url(./imgs/1.png);
     }
     li:nth-child(2n+1){
@@ -38,7 +64,6 @@ console.log("TimeLineItem");
         background-image: url(./imgs/6.png);
     }
     li{
-        background: top right / contain no-repeat;
         height: var(--height-huge);
         display: flex;
         /* border-radius: var(--radius-default); */
