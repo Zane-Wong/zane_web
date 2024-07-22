@@ -36,8 +36,7 @@ console.log("TimeLineItem");
     }
     li:nth-child(6n+5){
         background-image: url(./imgs/6.png);
-    } 
-
+    }
     li{
         background: top right / contain no-repeat;
         height: var(--height-huge);
@@ -60,11 +59,12 @@ console.log("TimeLineItem");
             h3{
                 color: var(--gray10);
             }
-            h2{
+            h2{ 
                 // background-color: green;
                 margin: var(--margin-small) 0;
                 font-size: var(--font-large);
-                font-weight: 600;
+                font-weight: 600; 
+
             }
         }
     }
