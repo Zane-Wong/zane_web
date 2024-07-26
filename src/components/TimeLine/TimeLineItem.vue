@@ -1,7 +1,7 @@
 <template>
     <li>
         <div class="decoration">
-            <div class="ico">⚪</div>
+            <div class="ico">◯</div><!-- ○ -->
             <div class="line"></div>
         </div>
         <div class="intro">
@@ -15,31 +15,11 @@
 </template>
 <script lang="ts" setup>
 import { defineProps ,PropType } from "vue";
-import { TimeLineItemType } from "./data";
-defineProps({
-    data:{
-        type: {
-            start_time: String,
-            end_tiem: String,
-            title: String,
-            description: String
-           //, imgs: Array<{desc:String,url:String}>
-        } //Object as PropType<TimeLineItemType>
-    }
-});
+defineProps(['data'])
 </script>
 <style lang="scss" scoped>
-// .intro{
-//     background-color: var(--gray2);
-//     border-radius: var(--radius-default);
-//     background: top right / contain no-repeat;
-//     width: 100%;
-//     padding: 0 var(--padding-default);
-//     margin: var(--font-default) 0;
-//     background-color: #fff;
-// }
-.dark .intro{
-    // background-color: var(--gray12);
+.decoration{
+    background-color: green;
 }
 li{
     margin: var(--margin-default) 0;
@@ -47,18 +27,40 @@ li{
 @media screen and (max-width: 768px) {
     li:nth-child(n){
         background-image: url(./imgs/1.png);
+        .intro{
+            color: var(--blue5);
+        }
     }
     li:nth-child(2n+1){
         background-color: url(./imgs/2.png);
+        .intro{
+            color: var(--orange5);
+        }
     }
     li:nth-child(3n+2){
         background-image: url(./imgs/3.png);
+        .intro{
+            color: var(--green5);
+        }
     }
     li:nth-child(4n+3){
         background-image: url(./imgs/4.png);
+        .decoration .line{
+            border-color: var(--red5);
+        }
+        .intro{
+            
+            color: var(--red5);
+        }
     }
     li:nth-child(5n+4){
         background-image: url(./imgs/5.png);
+        .decoration .line{
+            border-color: var(--purple5);
+        }
+        .intro{
+            color: var(--purple5);
+        }
     }
     li:nth-child(6n+5){
         background-image: url(./imgs/6.png);
@@ -74,9 +76,9 @@ li{
             align-items: center;
             margin: 0 var(--margin-small);
             .line{
-                border: 1px solid var(--blue5);
+                border: 1px solid;
                 height: 100%;
-                margin: var(--padding-small) 0;
+                margin-top: var(--padding-default);
             }
         }
         .intro{
@@ -106,7 +108,6 @@ li{
             }
         }
     }
-
 
 }
 @media screen and (min-width: 768px) {

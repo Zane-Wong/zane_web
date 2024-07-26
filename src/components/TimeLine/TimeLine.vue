@@ -5,12 +5,11 @@
 </template>
 <script setup>
 // console.log()
-import { onMounted } from 'vue';
-new FileReader();
-onMounted(()=>{
-    
-});
+// import { onMounted } from 'vue';
+// new FileReader();
+// onMounted(()=>{
+// });
 </script>
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
