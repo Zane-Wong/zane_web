@@ -1,7 +1,7 @@
 <template>
     <li>
         <div class="decoration">
-            <div class="ico">◯</div><!-- ○ -->
+            <div class="ico">◯</div><!--○-->
             <div class="line"></div>
         </div>
         <div class="intro">
@@ -18,103 +18,151 @@ import { defineProps ,PropType } from "vue";
 defineProps(['data'])
 </script>
 <style lang="scss" scoped>
-.decoration{
-    background-color: green;
-}
+
 li{
     margin: var(--margin-default) 0;
 }
-@media screen and (max-width: 768px) {
-    li:nth-child(n){
+// @media screen and (max-width: 768px) {
+    li:nth-child(7n+1){
         background-image: url(./imgs/1.png);
-        .intro{
-            color: var(--blue5);
+        .ico{
+            color: var(--yellow5);
+            text-shadow: 0px 0px 5px var(--yellow5);
+        }
+        .line{
+            background: linear-gradient( to bottom, var(--yellow5), transparent) ;
+        }
+        .intro h2{
+            color: var(--yellow5);
         }
     }
-    li:nth-child(2n+1){
-        background-color: url(./imgs/2.png);
-        .intro{
-            color: var(--orange5);
+    li:nth-child(7n+2){
+        background-image: url(./imgs/2.png);
+        .ico{
+            color: var(--red5);
+            text-shadow: 0px 0px 5px var(--pink5);
         }
-    }
-    li:nth-child(3n+2){
-        background-image: url(./imgs/3.png);
-        .intro{
-            color: var(--green5);
+        .line{
+            background: linear-gradient( to bottom, var(--red5), transparent) ;
         }
-    }
-    li:nth-child(4n+3){
-        background-image: url(./imgs/4.png);
-        .decoration .line{
-            border-color: var(--red5);
-        }
-        .intro{
-            
+        .intro h2{
             color: var(--red5);
         }
     }
-    li:nth-child(5n+4){
-        background-image: url(./imgs/5.png);
-        .decoration .line{
-            border-color: var(--purple5);
+    li:nth-child(7n+3){
+        background-image: url(./imgs/3.png);
+        .ico{
+            color: var(--orange5);
+            text-shadow: 0px 0px 5px var(--yellow5);
         }
-        .intro{
+        .line{
+            background: linear-gradient( to bottom, var(--orange5), transparent) ;
+        }
+        .intro h2{
+            color: var(--orange5);
+        }
+    }
+    li:nth-child(7n+4){
+        background-image: url(./imgs/4.png);
+        .ico{
+            color: var(--green5);
+            text-shadow: 0px 0px 5px var(--green5);
+        }
+        .line{
+            background: linear-gradient( to bottom, var(--green5), transparent) ;
+        }
+        .intro h2{
+            color:var(--green5);
+        }
+    }
+    li:nth-child(7n+5){
+        background-image: url(./imgs/5.png);
+        .ico{
+            color: var(--blue5);
+            text-shadow: 0px 0px 5px var(--cyan5);
+        }
+        .line{
+            background: linear-gradient( to bottom, var(--blue5), transparent) ;
+        }
+        .intro h2{
+            color: var(--blue5);
+        }
+    }
+    li:nth-child(7n+6){
+        background-image: url(./imgs/9.png);
+        .ico{
+            color: var(--purple5);
+            text-shadow: 0px 0px 5px var(--purple5);
+        }
+        .line{
+            background: linear-gradient( to bottom, var(--purple5), transparent) ;
+        }
+        .intro h2{
             color: var(--purple5);
         }
     }
-    li:nth-child(6n+5){
-        background-image: url(./imgs/6.png);
+    li:nth-child(7n+7){
+        background-image: url(./imgs/8.png);
+        .ico{
+            color: var(--cyan5);
+            text-shadow: 0px 0px 5px var(--cyan5);
+        }
+        .line{
+            background: linear-gradient( to bottom, var(--cyan5), transparent) ;
+        }
+        .intro h2{
+            color: var(--cyan5);
+        }
     }
     li{
         height: var(--height-huge);
         display: flex;
-        /* border-radius: var(--radius-default); */
+        border-radius: 0 var(--radius-default) var(--radius-default) 0;
+        background: top right / contain no-repeat;
+        background-repeat: no-repeat;
+        margin: 0 var(--margin-default);
         .decoration{
-            // background-color: pink;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 0 var(--margin-small);
+            .ico{
+                line-height:calc(var(font-default)*1.5)
+            }
             .line{
-                border: 1px solid;
+                width: 2px;
                 height: 100%;
                 margin-top: var(--padding-default);
+                border-radius: var(--radius-small);
             }
         }
         .intro{
             // background-color: yellow;
             h3{
                 color: var(--gray10);
+                font-size: var(--font-small);
+                line-height: calc(1.5*var(--font-default));
             }
             h2{ 
-                // background-color: green;
                 margin: var(--margin-small) 0;
-                font-size: var(--font-large);
+                font-size: var(--font-huge);
                 font-weight: 600; 
-
             }
         }
     }
     
     .dark li{
-        .decoration{
-            .line{
-                border-color: var(--blue3);
-            }
-        }
-        .intro{
+        .intro, p{
             h3{
-                color: var(--gray8);
+                color: var(--gray4);
             }
         }
     }
 
-}
-@media screen and (min-width: 768px) {
-    /* li{
-        background-color: blue;
-    } */
+// }
+// @media screen and (min-width: 768px) {
 
-}
+
+// }
 
 </style>
