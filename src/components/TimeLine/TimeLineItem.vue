@@ -8,14 +8,15 @@
             <h3>{{ data.start_time }} - {{ data.end_time }}</h3>
             <h2>{{ data.title }}</h2>
             <p>{{ data.description }}</p>
-            <slot name="img">
+            <slot name="imgs">
             </slot>
         </div>
     </li>
 </template>
 <script lang="ts" setup>
-import { defineProps ,PropType } from "vue";
-defineProps(['data'])
+import { defineProps } from "vue";
+defineProps(['data']);
+
 </script>
 <style lang="scss" scoped>
 
@@ -120,7 +121,7 @@ li{
         border-radius: 0 var(--radius-default) var(--radius-default) 0;
         background: top right / contain no-repeat;
         background-repeat: no-repeat;
-        margin: 0 var(--margin-default);
+        margin: var(--margin-default);
         .decoration{
             display: flex;
             flex-direction: column;

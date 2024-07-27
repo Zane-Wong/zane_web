@@ -1,14 +1,15 @@
 <template>
     <ul>
-        <slot></slot>
+        <slot ></slot>
     </ul>
 </template>
 <script setup>
-// console.log()
-// import { onMounted } from 'vue';
-// new FileReader();
-// onMounted(()=>{
-// });
+const widthQuery = window.matchMedia('(min-width: 768px)');
+window.addEventListener('resize',()=>{
+    if(widthQuery.matches){
+        selfdom = true;
+    }
+})
 </script>
 <style lang="scss" scoped>
 

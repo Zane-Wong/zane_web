@@ -1,5 +1,5 @@
 <template>
-    <div v-if="show" class="overlay" @click.stop="closeGallery" @wheel.prevent >
+    <div v-if="visiable" class="overlay" @click.stop="closeGallery" @wheel.prevent >
         <!--  -->
         <div class="viewer">
             <button @click.stop="prevImg" class="btn prev-btn"><</button>
@@ -10,39 +10,30 @@
         
     </div>
 </template>
-<script>
+<script setup>
 import { images } from "./data";
-export default {
-    name: "Gallery",
-    props: {
-        imgs: { type: Array, default: images, required: false },
-        initialIndex: { type: Number, default: 0, required: false},
-        visiable: { type: Boolean, default: false, required: false}
-    },
-    emits: ["update:visiable"],
-    data(){
-        return {
-            currentIndex: this.initialIndex,
-            show: this.visiable
-        };
-    },
-    methods: {
-        prevImg(){
-            if(this.currentIndex>0){
-                this.currentIndex--;
-            }
-        },
-        nextImg(){
-            if(this.currentIndex<this.imgs.length-1){
-                this.currentIndex++;
-            }
-        },
-        closeGallery(){
-            this.show = false;
-            console.log(this.show)
-            this.$emit('update:visiable',this.show);
-        }
+import { defineProps, defineEmits, ref } from 'vue';
+const props = defineProps({
+    imgs: { type: Array, default: images, required: false },
+    initialIndex: { type: Number, default: 0, required: false},
+    visiable: { type: Boolean, default: false, required: false}
+});
+const emit = defineEmits(["update:visiable"]);
+const currentIndex = ref(props.initialIndex);
+// const show = ref(props.visiable);
+function prevImg(){
+    if(currentIndex.value>0){
+        currentIndex.value--;
     }
+}
+function nextImg(){
+    if(currentIndex.value<props.imgs.length-1){
+        currentIndex.value++;
+    }
+}
+function closeGallery(){
+    // props.visiables = false;
+    emit('update:visiable',props.visiable);
 }
 </script>
 <style lang="scss" scoped>
@@ -56,7 +47,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1100;
     .viewer{
         position: relative;
         display: flex;

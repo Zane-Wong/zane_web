@@ -14,7 +14,8 @@
             </section>
             <section id="author">
                 <SectionTitle title="作者"></SectionTitle>
-                <Author></Author>
+                <!-- <Author></Author> -->
+                 <Image></Image>
             </section>
         </main>
         <footer id="about">
@@ -30,6 +31,7 @@ import SectionTitle from '../../components/SectionTitle.vue';
 import Author from '../Author/Author.vue';
 import {projects} from '../../components/Card/data';
 import Foot from '../../components/Foot/Foot.vue';
+import Image from '../../components/Image/Image.vue';
 // import test from '../../components/Gallery/test.vue';
 export default{
     name:'Home',
@@ -38,7 +40,8 @@ export default{
         SectionTitle,
         Card,
         Author,
-        Foot
+        Foot,
+        Image
         //, test
     },
     data(){
