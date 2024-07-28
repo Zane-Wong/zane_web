@@ -14,8 +14,8 @@
             </section>
             <section id="author">
                 <SectionTitle title="作者"></SectionTitle>
-                <!-- <Author></Author> -->
-                 <Image></Image>
+                <Author></Author>
+                 <!-- <Image :data="myImgs"></Image> -->
             </section>
         </main>
         <footer id="about">
@@ -31,7 +31,7 @@ import SectionTitle from '../../components/SectionTitle.vue';
 import Author from '../Author/Author.vue';
 import {projects} from '../../components/Card/data';
 import Foot from '../../components/Foot/Foot.vue';
-import Image from '../../components/Image/Image.vue';
+// import Image from '../../components/Image/Image.vue';
 // import test from '../../components/Gallery/test.vue';
 export default{
     name:'Home',
@@ -40,13 +40,19 @@ export default{
         SectionTitle,
         Card,
         Author,
-        Foot,
-        Image
+        Foot
+        //, Image
         //, test
     },
     data(){
         return {
             title: "Powered by wangzhuo",
+            // myImgs:[        
+            //     {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'},
+            //     {desc:'描述',src:'https://swansoftwaresolutions.com/wp-content/uploads/2020/01/Benefits-of-Using-VUE.JS.jpeg'},
+            //     {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'},
+            //     {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'}
+            // ],
             projects: [
                 { title: '', 
                 coverImg:'', 

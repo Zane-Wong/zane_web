@@ -8,15 +8,14 @@
             <h3>{{ data.start_time }} - {{ data.end_time }}</h3>
             <h2>{{ data.title }}</h2>
             <p>{{ data.description }}</p>
-            <slot name="imgs">
-            </slot>
+            
         </div>
+        <div v-if="$slots.imgs"><slot  name="imgs"></slot></div>
     </li>
 </template>
 <script lang="ts" setup>
 import { defineProps } from "vue";
 defineProps(['data']);
-
 </script>
 <style lang="scss" scoped>
 

@@ -3,9 +3,8 @@
         <div class="image-card" v-for="(img, index) in data" @click="previewImg">
             <img :src="img.src" :alt="img.desc" :id="index"/>
         </div>
-        <Gallery v-model:visiable="showGallery" :imgs="data" :initialIndex="currentIndex" @update:visiable="galleryUpdate"></Gallery>
+        <Gallery v-if="showGallery" :imgs="data" :initial-index="currentIndex" @close="galleryClose"></Gallery> <!--@update:visiable="galleryClose"-->
     </div>
-    
 </template>
 <script setup>
 import { ref, defineProps } from 'vue';
@@ -13,25 +12,23 @@ import Gallery from '../../components/Gallery/Gallery.vue';
 defineProps({
     data:{
         type: Array,
-        default: [
-        {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'},
-        {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'},
-        {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'}
-
-        ],
+        default: [ ],
     }
 });
 const showGallery = ref(false);
 const currentIndex = ref(0);
 function previewImg( event){
-    if(!showGallery.value){
-        showGallery.value = true;
-        console.log(showGallery.value);
-    }
     currentIndex.value = parseInt(event.target.id);
+    // if(!showGallery.value){
+    //     showGallery.value = true;
+    //     console.log(showGallery.value);
+    // }
+    showGallery.value = true;
+    
 }
-function galleryUpdate(isShow){
-    showGallery.value= !isShow;
+function galleryClose(){
+    // showGallery.value= !isShow;
+    showGallery.value = false;
 }
 </script>
 <style lang="scss" scoped>
@@ -60,9 +57,10 @@ function galleryUpdate(isShow){
     border-color: var(--gray12);
     box-shadow: 2px 0px 10px var(--gray12);
 }
-.image-card:nth-child(n){
-    // border-color: red;
+.image-card:nth-child(n+1){
+    transform: rotate(15deg);
 }
+
 .image-card:hover{
     transform: translateY(calc(-1*var(--height-small)));
 }

@@ -5,8 +5,9 @@ export let events = [
         title: '吹水',
         description: '事件的描述',
         imgs:[
-            'https://ts1.cn.mm.bing.net/th/id/R-C.633901d07a3d18cdf6d58a0ccc74078d?rik=8evNNQvJj91%2bjg&riu=http%3a%2f%2fimg.hkwb.net%2fatt%2fsite2%2f20120308%2f633901d07a3d18cdf6d58a0ccc74078d.jpg&ehk=mupUGFlfxfEilMIkHoDFPVYnfR%2bSaF86fmgOkvvU8YM%3d&risl=&pid=ImgRaw&r=0',
-            'https://img.zcool.cn/community/01dcf1554be63a000001bf7268fd65.jpg@1280w_1l_2o_100sh.jpg'
+            {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'},
+            {desc:'描述',src:'https://swansoftwaresolutions.com/wp-content/uploads/2020/01/Benefits-of-Using-VUE.JS.jpeg'},
+            {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'}
         ]
     },
     {
@@ -15,8 +16,9 @@ export let events = [
         title: '事情',
         description: '事件的描述',
         imgs:[
-            'https://ts1.cn.mm.bing.net/th/id/R-C.633901d07a3d18cdf6d58a0ccc74078d?rik=8evNNQvJj91%2bjg&riu=http%3a%2f%2fimg.hkwb.net%2fatt%2fsite2%2f20120308%2f633901d07a3d18cdf6d58a0ccc74078d.jpg&ehk=mupUGFlfxfEilMIkHoDFPVYnfR%2bSaF86fmgOkvvU8YM%3d&risl=&pid=ImgRaw&r=0',
-            'https://img.zcool.cn/community/01dcf1554be63a000001bf7268fd65.jpg@1280w_1l_2o_100sh.jpg'
+            {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'},
+            {desc:'描述',src:'https://swansoftwaresolutions.com/wp-content/uploads/2020/01/Benefits-of-Using-VUE.JS.jpeg'},
+            {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'}
         ]
     },
     {
@@ -25,8 +27,9 @@ export let events = [
         title: '美食美么',
         description: '事件的描述',
         imgs:[
-            'https://ts1.cn.mm.bing.net/th/id/R-C.633901d07a3d18cdf6d58a0ccc74078d?rik=8evNNQvJj91%2bjg&riu=http%3a%2f%2fimg.hkwb.net%2fatt%2fsite2%2f20120308%2f633901d07a3d18cdf6d58a0ccc74078d.jpg&ehk=mupUGFlfxfEilMIkHoDFPVYnfR%2bSaF86fmgOkvvU8YM%3d&risl=&pid=ImgRaw&r=0',
-            'https://img.zcool.cn/community/01dcf1554be63a000001bf7268fd65.jpg@1280w_1l_2o_100sh.jpg'
+            {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'},
+            {desc:'描述',src:'https://swansoftwaresolutions.com/wp-content/uploads/2020/01/Benefits-of-Using-VUE.JS.jpeg'},
+            {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'}
         ]
     },
     {
@@ -35,8 +38,9 @@ export let events = [
         title: '吹牛',
         description: '事件的描述',
         imgs:[
-            'https://ts1.cn.mm.bing.net/th/id/R-C.633901d07a3d18cdf6d58a0ccc74078d?rik=8evNNQvJj91%2bjg&riu=http%3a%2f%2fimg.hkwb.net%2fatt%2fsite2%2f20120308%2f633901d07a3d18cdf6d58a0ccc74078d.jpg&ehk=mupUGFlfxfEilMIkHoDFPVYnfR%2bSaF86fmgOkvvU8YM%3d&risl=&pid=ImgRaw&r=0',
-            'https://img.zcool.cn/community/01dcf1554be63a000001bf7268fd65.jpg@1280w_1l_2o_100sh.jpg'
+            {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'},
+            {desc:'描述',src:'https://swansoftwaresolutions.com/wp-content/uploads/2020/01/Benefits-of-Using-VUE.JS.jpeg'},
+            {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'}
         ]
     },
     {
@@ -45,8 +49,9 @@ export let events = [
         title: '吹牛',
         description: '事件的描述',
         imgs:[
-            'https://ts1.cn.mm.bing.net/th/id/R-C.633901d07a3d18cdf6d58a0ccc74078d?rik=8evNNQvJj91%2bjg&riu=http%3a%2f%2fimg.hkwb.net%2fatt%2fsite2%2f20120308%2f633901d07a3d18cdf6d58a0ccc74078d.jpg&ehk=mupUGFlfxfEilMIkHoDFPVYnfR%2bSaF86fmgOkvvU8YM%3d&risl=&pid=ImgRaw&r=0',
-            'https://img.zcool.cn/community/01dcf1554be63a000001bf7268fd65.jpg@1280w_1l_2o_100sh.jpg'
+            {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'},
+            {desc:'描述',src:'https://swansoftwaresolutions.com/wp-content/uploads/2020/01/Benefits-of-Using-VUE.JS.jpeg'},
+            {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'}
         ]
     },
     {
@@ -55,8 +60,9 @@ export let events = [
         title: '吹牛',
         description: '事件的描述',
         imgs:[
-            'https://ts1.cn.mm.bing.net/th/id/R-C.633901d07a3d18cdf6d58a0ccc74078d?rik=8evNNQvJj91%2bjg&riu=http%3a%2f%2fimg.hkwb.net%2fatt%2fsite2%2f20120308%2f633901d07a3d18cdf6d58a0ccc74078d.jpg&ehk=mupUGFlfxfEilMIkHoDFPVYnfR%2bSaF86fmgOkvvU8YM%3d&risl=&pid=ImgRaw&r=0',
-            'https://img.zcool.cn/community/01dcf1554be63a000001bf7268fd65.jpg@1280w_1l_2o_100sh.jpg'
+            {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'},
+            {desc:'描述',src:'https://swansoftwaresolutions.com/wp-content/uploads/2020/01/Benefits-of-Using-VUE.JS.jpeg'},
+            {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'}
         ]
     },
     {
@@ -65,8 +71,9 @@ export let events = [
         title: '吹牛',
         description: '事件的描述',
         imgs:[
-            'https://ts1.cn.mm.bing.net/th/id/R-C.633901d07a3d18cdf6d58a0ccc74078d?rik=8evNNQvJj91%2bjg&riu=http%3a%2f%2fimg.hkwb.net%2fatt%2fsite2%2f20120308%2f633901d07a3d18cdf6d58a0ccc74078d.jpg&ehk=mupUGFlfxfEilMIkHoDFPVYnfR%2bSaF86fmgOkvvU8YM%3d&risl=&pid=ImgRaw&r=0',
-            'https://img.zcool.cn/community/01dcf1554be63a000001bf7268fd65.jpg@1280w_1l_2o_100sh.jpg'
+            {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'},
+            {desc:'描述',src:'https://swansoftwaresolutions.com/wp-content/uploads/2020/01/Benefits-of-Using-VUE.JS.jpeg'},
+            {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'}
         ]
     }
 
