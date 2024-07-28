@@ -19,9 +19,52 @@ defineProps(['data']);
 </script>
 <style lang="scss" scoped>
 
-li{
-    margin: var(--margin-default) 0;
-}
+    li{
+        margin: var(--margin-default) 0;
+        // height: var(--height-huge);
+        // background-color: green !important;
+        display: flex;
+        border-radius: 0 var(--radius-default) var(--radius-default) 0;
+        background: top right / contain no-repeat;
+        background-repeat: no-repeat;
+        margin: var(--margin-default);
+        .decoration{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 var(--margin-small);
+            .ico{
+                line-height:calc(var(font-default)*1.5)
+            }
+            .line{
+                width: 2px;
+                height: 100%;
+                margin-top: var(--padding-default);
+                border-radius: var(--radius-small);
+            }
+        }
+        .intro{
+            // background-color: yellow;
+            h3{
+                color: var(--gray10);
+                font-size: var(--font-small);
+                line-height: calc(1.5*var(--font-default));
+            }
+            h2{ 
+                margin: var(--margin-small) 0;
+                font-size: var(--font-huge);
+                font-weight: 600; 
+            }
+        }
+    }
+    
+    .dark li{
+        .intro, p{
+            h3{
+                color: var(--gray4);
+            }
+        }
+    }
 // @media screen and (max-width: 768px) {
     li:nth-child(7n+1){
         background-image: url(./imgs/1.png);
@@ -114,50 +157,7 @@ li{
             color: var(--cyan5);
         }
     }
-    li{
-        height: var(--height-huge);
-        display: flex;
-        border-radius: 0 var(--radius-default) var(--radius-default) 0;
-        background: top right / contain no-repeat;
-        background-repeat: no-repeat;
-        margin: var(--margin-default);
-        .decoration{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 var(--margin-small);
-            .ico{
-                line-height:calc(var(font-default)*1.5)
-            }
-            .line{
-                width: 2px;
-                height: 100%;
-                margin-top: var(--padding-default);
-                border-radius: var(--radius-small);
-            }
-        }
-        .intro{
-            // background-color: yellow;
-            h3{
-                color: var(--gray10);
-                font-size: var(--font-small);
-                line-height: calc(1.5*var(--font-default));
-            }
-            h2{ 
-                margin: var(--margin-small) 0;
-                font-size: var(--font-huge);
-                font-weight: 600; 
-            }
-        }
-    }
     
-    .dark li{
-        .intro, p{
-            h3{
-                color: var(--gray4);
-            }
-        }
-    }
 
 // }
 // @media screen and (min-width: 768px) {

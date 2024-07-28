@@ -34,20 +34,22 @@ function galleryClose(){
 <style lang="scss" scoped>
 .card-contariner{
     margin-left: var(--height-huge);
-    margin-top: var(--height-huge);
+    margin-top: var(--height-default);
+    margin-bottom: var(--height-small);
+    // background-color: red;
 }
 .image-card{
     display: inline-block;
-    width: var(--height-max);
-    height: var(--height-max);
+    width: var(--height-huge);
+    height: var(--height-huge);
     border-radius: var(--radius-large);
     background-color: var(--gray4);
     overflow: hidden;
     border: 3px solid var(--gray4);
     box-shadow: 2px 0px 10px var(--gray6);
     transition: transform 0.2s ease-in-out;
-    margin-top:calc(-1*var(--height-large));
-    margin-left:calc(-2*var(--height-large));
+    margin-top:calc(-1*var(--height-default));
+    margin-left:calc(-1*var(--height-default));
     img{
         height: 100%;
     }
