@@ -67,7 +67,7 @@ function closeGallery(){
             border:none;
             font-size: var(--font-max);
             cursor: pointer;
-            font-family:simsun;
+            font-family: simsun, serif, sans-serif;
             font-weight:900;
             margin: 0 var(--margin-small);
             width: var(--font-large);
@@ -84,7 +84,7 @@ function closeGallery(){
             left: 50%;
             color: white;
             transform: translateX(-50%);
-            text-shadow: 0px 0px 2px black;
+            text-shadow: 0 0 2px black;
         }
     }
 
