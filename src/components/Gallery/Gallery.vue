@@ -1,6 +1,6 @@
 <template>
     <div class="overlay" @click.stop="closeGallery" @wheel.prevent >
-        <div class="viewer">
+        <div class="viewer" @click.stop>
             <button @click.stop="prevImg" class="btn prev-btn"><</button>
             <img :src="imgs[currentIndex].src" class="image" :alt="imgs[currentIndex].desc">
             <button @click.stop="nextImg" class="btn next-btn">></button>
@@ -46,16 +46,18 @@ function closeGallery(){
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(255,255,255,0.7);
+    backdrop-filter: blur(var(--blur-default));
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1100;
+    z-index: 1000;
     .viewer{
+       width: 100%;
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         .image{
             max-width: 80%;
             max-height: 80%;
@@ -63,11 +65,12 @@ function closeGallery(){
         .btn{
             background-color: transparent;
             border:none;
-            color: white;
             font-size: var(--font-max);
             cursor: pointer;
             font-family:simsun;
             font-weight:900;
+            margin: 0 var(--margin-small);
+            width: var(--font-large);
         }
         .prev-btn{
             margin-right: var(--font-max);
@@ -78,10 +81,20 @@ function closeGallery(){
         .index{
             position: absolute;
             bottom: 0;
-            text-align: center;
-            color: var(--gray2);
+            left: 50%;
+            color: white;
+            transform: translateX(-50%);
+            text-shadow: 0px 0px 2px black;
         }
     }
 
+}
+.dark .overlay{
+    background-color: rgba(0,0,0,0.3);
+    .viewer{
+        .btn{
+            color: white;
+        }
+    }
 }
 </style>

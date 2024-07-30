@@ -106,6 +106,8 @@
   --zane-card-cover-bgc: rgba(255,255,255,0.2);
   --zane-dark-card-bgc: rgba(160,160,160,0.16);
   --zane-dark-card-bgc: rgba(0,0,0,0.4);
+
+  --min-width: 328px;
 }
 
 /**
