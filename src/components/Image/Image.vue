@@ -1,5 +1,5 @@
 <template>
-    <div class="card-contariner">
+    <div class="card-container">
         <div class="image-card" v-for="(img, index) in data" @click="previewImg">
             <img :src="img.src" :alt="img.desc" :id="index"/>
         </div>
@@ -32,8 +32,9 @@ function galleryClose(){
 }
 </script>
 <style lang="scss" scoped>
-.card-contariner{
+.card-container{
     margin-left: var(--height-huge);
+    // margin-right: var(--height-default);
     margin-top: var(--height-default);
     margin-bottom: var(--height-small);
     // background-color: red;
@@ -52,6 +53,20 @@ function galleryClose(){
     margin-left:calc(-1*var(--height-default));
     img{
         height: 100%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .card-container{
+        margin-left: var(--height-huge);
+        margin-right: var(--height-default);
+        margin-top: var(--height-large);
+        margin-bottom: var(--height-default);
+    }
+    .image-card{
+        // box-shadow: 10px 10px 100px red;
+        margin-left: calc(-2*var(--height-default));
+        width: var(--height-max);
+        height: var(--height-max);
     }
 }
 .dark .image-card{

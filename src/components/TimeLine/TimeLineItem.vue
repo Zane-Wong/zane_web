@@ -8,7 +8,6 @@
             <h3>{{ data.start_time }} - {{ data.end_time }}</h3>
             <h2>{{ data.title }}</h2>
             <p>{{ data.description }}</p>
-            
         </div>
         <div v-if="$slots.imgs"><slot  name="imgs"></slot></div>
     </li>
@@ -157,12 +156,83 @@ defineProps(['data']);
             color: var(--cyan5);
         }
     }
-    
-
 // }
-// @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+    li{  
+        .decoration{
+            position: relative;
+            .line{
+                width: calc(100vw - 1300px);
+                background: transparent;
+                border: 3px solid;
+                position: absolute;
+                // border-image: linear-gradient(135deg ,transparent, var(--purple5), var(--blue5), transparent) 1;
+            }
+        }
+    }
+    li:nth-child(2n+1){ //奇数
+        flex-direction: row-reverse;
+        justify-content: start;
+        text-align: end;
+        .decoration{
+            .line{
+                // transform: translateX(56%);
+                left: 25px;
+                border-bottom: none;
+                border-left: none;
+            }
+        }
+    }
+    li:nth-child(2n+2){ //偶数
+        justify-content: end;
+        background: transparent;
+        .decoration{
+            .line{
+                // transform: translateX(-56%);
+                right: 25px;
+                border-right: none;
+                border-bottom: none;
+            }
+        }
+    }
+    li:nth-child(7n+1){
+        .decoration{
+            .line{ border-image: linear-gradient(135deg ,transparent, var(--yellow3), var(--red5), transparent) 1; }
+        }
+    }
+    li:nth-child(7n+2){
+        .decoration{
+            .line{ border-image: linear-gradient(235deg ,transparent, var(--red5), var(--orange3), transparent) 1; }
+        }
+    }
+    li:nth-child(7n+3){
+        .decoration{
+            .line{ border-image: linear-gradient(135deg ,transparent, var(--orange3), var(--green3), transparent) 1; }
+        }
+    }
+    li:nth-child(7n+4){
+        .decoration{
+            .line{ border-image: linear-gradient(235deg ,transparent, var(--green5), var(--blue5), transparent) 1; }
+        }
+    }
+    li:nth-child(7n+5){
+        .decoration{
+            .line{ border-image: linear-gradient(135deg ,transparent, var(--blue5), var(--purple5), transparent) 1; }
+        }
+    }
+    li:nth-child(7n+6){
+        .decoration{
+            .line{ border-image: linear-gradient(235deg ,transparent, var(--purple5), var(--cyan5), transparent) 1; }
+        }
+    }
+    li:last-child{
+        .decoration{
+            .line{
+                border:none;
+            }
+        }
+    }
 
-
-// }
+}
 
 </style>

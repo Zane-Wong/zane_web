@@ -1,8 +1,8 @@
 <template>
     <div class="overlay" @click.stop="closeGallery" @wheel.prevent >
-        <div class="viewer" @click.stop>
+        <div class="viewer">
             <button @click.stop="prevImg" class="btn prev-btn"><</button>
-            <img :src="imgs[currentIndex].src" class="image" :alt="imgs[currentIndex].desc">
+            <img :src="imgs[currentIndex].src" class="image" @click.stop :alt="imgs[currentIndex].desc">
             <button @click.stop="nextImg" class="btn next-btn">></button>
             <div class="index">{{ currentIndex+1 }} / {{ imgs.length }}</div>
         </div>
