@@ -13,8 +13,8 @@
                 <SectionTitle title="工具"></SectionTitle>
             </section>
             <section id="author">
-                <SectionTitle title="作者"></SectionTitle>
-                <Author></Author>
+                <!-- <SectionTitle title="作者"></SectionTitle>
+                <Author></Author> -->
                  <!-- <Image :data="myImgs"></Image> -->
             </section>
         </main>
