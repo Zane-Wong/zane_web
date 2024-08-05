@@ -3,12 +3,7 @@
         <Slogon id="index"></Slogon>
         <!-- <section class = "main" id="tools"></section> -->
         <main class = "main">
-            <section id="projects">
-                <SectionTitle title="项目"></SectionTitle>
-                <ul class="card-list">
-                    <Card v-for="project in projects" class="m-t m-b m-l m-r" :data="project"></Card>
-                </ul>
-            </section>
+
             <section id="tools">
                 <SectionTitle title="工具"></SectionTitle>
             </section>
@@ -17,6 +12,7 @@
                 <Author></Author> -->
                  <!-- <Image :data="myImgs"></Image> -->
             </section>
+            
         </main>
         <footer id="about">
             <Foot></Foot>
@@ -26,21 +22,21 @@
 </template>
 <script>
 import Slogon from '../../components/Slogon.vue';
-import Card from '../../components/Card/Card.vue';
 import SectionTitle from '../../components/SectionTitle.vue';
 import Author from '../Author/Author.vue';
-import {projects} from '../../components/Card/data';
 import Foot from '../../components/Foot/Foot.vue';
+import Projects from '../Projects/Projects.vue';
 // import Image from '../../components/Image/Image.vue';
 // import test from '../../components/Gallery/test.vue';
-export default{
-    name:'Home',
-    components:{
+export default {
+    name: 'Home',
+    components: {
         Slogon,
         SectionTitle,
-        Card,
+
         Author,
-        Foot
+        Foot,
+        Projects
         //, Image
         //, test
     },
@@ -53,21 +49,21 @@ export default{
             //     {desc:'描述',src:'https://cdn-media-1.freecodecamp.org/ghost/2019/03/vueart.png'},
             //     {desc:'描述',src:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg'}
             // ],
-            projects: [
-                { title: '', 
-                coverImg:'', 
-                url:'',
-                subTitle: '', 
-                description: '', 
-                tags:[], 
-                platform:''}
-            ],
+            // projects: [
+            //     { title: '', 
+            //     coverImg:'', 
+            //     url:'',
+            //     subTitle: '', 
+            //     description: '', 
+            //     tags:[], 
+            //     platform:''}
+            // ],
 
         }
     },
-    created(){
-        this.projects = projects;
-    }
+    // created(){
+    //     this.projects = projects;
+    // }
 }
 </script>
 <style lang="scss" scoped>
@@ -81,12 +77,6 @@ export default{
     padding: var(--padding-large) var(--padding-default);
     background-color: rgba(255,255,255,0.88);
     // backdrop-filter: blur(var(--blur-large));
-    .card-list{
-        // background-color: gray; 
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 }
 .dark .main {
     background-color: rgba(0,0,0,0.8);
