@@ -8,10 +8,12 @@
         <div class="right">
             <ul>
                 <li v-for="nav in navList" class="nav-item">
-                    <a :href="nav.url">
+                  <router-link :to="nav.url">
+                    <!-- <a href="javascript: void(0);">nav.url-->
                         {{ nav.title }}
                         <div class="bottom-line"></div>
-                    </a>
+<!--                    </a>-->
+                  </router-link>
                 </li>
             </ul>
             <DarkSwitch class="nav-item"></DarkSwitch>

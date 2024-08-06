@@ -12,7 +12,7 @@
                 <Author></Author> -->
                  <!-- <Image :data="myImgs"></Image> -->
             </section>
-            
+          <RouterView/>
         </main>
         <footer id="about">
             <Foot></Foot>
@@ -21,13 +21,13 @@
     <!-- <test></test> -->
 </template>
 <script>
-import Slogon from '../../components/Slogon.vue';
+// import Slogon from '../../components/Slogon.vue';
+import Slogon from "@/components/Slogon.vue";
 import SectionTitle from '../../components/SectionTitle.vue';
 import Author from '../Author/Author.vue';
 import Foot from '../../components/Foot/Foot.vue';
 import Projects from '../Projects/Projects.vue';
-// import Image from '../../components/Image/Image.vue';
-// import test from '../../components/Gallery/test.vue';
+// import Image from '../../components/Image/Image.vue'
 export default {
     name: 'Home',
     components: {

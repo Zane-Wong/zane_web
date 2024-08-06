@@ -1,6 +1,5 @@
 {
   "compilerOptions":{
-    "baseUrl": ".", // 这将被解释为'root'目录
     "paths": {
       "@/*": ["src/*"] // 这里定义了'@'别名，指向'src'目录
     }
