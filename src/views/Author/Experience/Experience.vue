@@ -1,4 +1,5 @@
 <template>
+    <SectionTitle title="个人经历"/>
     <TimeLine>
         <template v-slot="slotProps">
             <TimeLineItem  v-for="(e, i) in events" :data="e">
@@ -16,13 +17,15 @@ import TimeLine from '../../../components/TimeLine/TimeLine.vue';
 import TimeLineItem from '../../../components/TimeLine/TimeLineItem.vue';
 import Gallery from '../../../components/Gallery/Gallery.vue';
 import Image from '../../../components/Image/Image.vue';
+import SectionTitle from "@/components/SectionTitle.vue";
 import {events} from './data.ts';
 export default{
     name: 'Experience',
     components: {
         TimeLine,
         TimeLineItem,
-        Image
+        Image,
+        SectionTitle
     },
     data(){
         return {

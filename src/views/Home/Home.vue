@@ -4,14 +4,12 @@
         <!-- <section class = "main" id="tools"></section> -->
         <main class = "main">
 
-            <section id="tools">
-                <SectionTitle title="工具"></SectionTitle>
-            </section>
-            <section id="author">
+
+            <!-- <section id="author"> -->
                 <!-- <SectionTitle title="作者"></SectionTitle>
                 <Author></Author> -->
                  <!-- <Image :data="myImgs"></Image> -->
-            </section>
+            <!-- </section> -->
           <RouterView/>
         </main>
         <footer id="about">
