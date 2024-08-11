@@ -2,9 +2,7 @@
     <div class="main-container">
         <Slogon id="index"></Slogon>
         <!-- <section class = "main" id="tools"></section> -->
-        <main class = "main">
-
-
+        <main id="main" class = "main">
             <!-- <section id="author"> -->
                 <!-- <SectionTitle title="作者"></SectionTitle>
                 <Author></Author> -->

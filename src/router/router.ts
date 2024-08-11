@@ -9,6 +9,25 @@ const routes = [
 ]
 const router =createRouter({
     history: createMemoryHistory(),
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition){
+        console.log(to.hash);
+        if(to.hash){  
+            if(document.querySelector(to.hash)){
+                const el: any = document.querySelector(to.hash);
+                window.scrollTo(0,el.offsetTop-10);
+                // window.scrollTo({
+                //     top: 500,//el.offsetTop
+                //     left: 0,
+                //     behavior: "smooth",
+                // });
+                return{
+                    selector: to.hash,
+                    behavior: 'smooth'
+                }
+            }
+            return false;
+        }
+    }
 }) ;
 export default router;
