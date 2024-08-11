@@ -48,6 +48,7 @@ defineProps(['data']);
                 color: var(--gray10);
                 font-size: var(--font-small);
                 line-height: calc(1.5*var(--font-default));
+                min-width: var(--width-large);
             }
             h2{ 
                 margin: var(--margin-small) 0;

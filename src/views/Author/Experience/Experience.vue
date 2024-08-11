@@ -9,8 +9,8 @@
             </TimeLineItem>
         </template>
     </TimeLine>
-    <div id="aaa" ref="aaa">aaa</div>
-    <p id="ppp" ref="ppp"> ppp</p>
+    <!-- <div id="aaa" ref="aaa">aaa</div>
+    <p id="ppp" ref="ppp"> ppp</p> -->
 </template>
 <script>
 import TimeLine from '../../../components/TimeLine/TimeLine.vue';
@@ -33,10 +33,10 @@ export default{
         }
     },
     created(){
-        console.log("Experience");
+        // console.log("Experience");
     },
     mounted(){
-        console.log(this.$refs);
+        // console.log(this.$refs);
     }
 }
 </script>
