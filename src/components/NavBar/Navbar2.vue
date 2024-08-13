@@ -12,7 +12,7 @@
                     <!-- <a href="javascript: void(0);">nav.url-->
                         {{ nav.title }}
                         <div class="bottom-line"></div>
-<!--                    </a>-->
+                    <!-- </a>-->
                   </router-link>
                 </li>
             </ul>
@@ -23,6 +23,7 @@
 <script>
 import { navList } from './data';
 import DarkSwitch from '../../components/DarkSwitch.vue';
+import emitter from "@/utils/emitter";
 export default {
     components: {
         DarkSwitch
@@ -36,10 +37,21 @@ export default {
         }
     },
     mounted(){
+        // console.log(this.$el);
         this.navbarHeight = this.$el.offsetHeight;//数值，无'px'
         window.addEventListener('scroll', this.handleScroll);
+        emitter.on( "hide-navbar" , () => {
+            this.navbarOpacity=0;
+            this.$el.style.top = -1*this.navbarHeight; 
+        })
+        emitter.on( "show-navbar" , () => {
+            this.navbarOpacity = 1;
+            this.$el.style.top = 0;
+        })
     },
     beforeDestroy(){/** ************* */
+        emitter.off( "hide-navbar" );
+        emitter.off( "show-navbar" );
         window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
@@ -71,7 +83,7 @@ export default {
     backdrop-filter: blur(var(--blur-large));
     display: flex;
     justify-content: space-around;
-    // transition: all 0.4s ease-out;
+    transition: all 0.2s ease-in;
     .left{
         display: flex;
         align-items: center;

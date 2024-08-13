@@ -1,5 +1,5 @@
 <template>
-    <div class="overlay" @click.stop="closeGallery" @wheel.prevent >
+    <div class="overlay" @click.stop="closeGallery" @wheel.prevent @touchmove.prevent >
         <div class="viewer">
             <button @click.stop="prevImg" class="btn prev-btn"><</button>
             <img :src="imgs[currentIndex].src" class="image" @click.stop :alt="imgs[currentIndex].desc">
@@ -10,7 +10,14 @@
 </template>
 <script setup>
 import { images } from "./data";
-import { defineProps, defineEmits, ref } from 'vue';
+import { defineEmits, ref, onMounted, onBeforeUnmount } from 'vue';
+import emitter from "@/utils/emitter";
+onMounted(()=>{
+    emitter.emit("hide-navbar");
+})
+onBeforeUnmount(()=>{
+    emitter.emit("show-navbar");
+})
 const props = defineProps({
     imgs: { type: Array, default: images, required: false },
     initialIndex: { type: Number, default: 0, required: false} // ,
