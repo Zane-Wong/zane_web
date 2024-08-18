@@ -1,17 +1,25 @@
 <template>
 <dl>
     <div v-for="(a,i) in about">
-        <dt> {{ a.title }}</dt>
-        <dd v-for="d in a.data" :class="i===0?'copyright':''">{{ d.label }} {{ d.value }}</dd>
+        <!-- :class="{copyright : i==0}" -->
+        <dt style="user-select: none;"> {{ a.title }}</dt>
+        <dd v-for="d in a.data" >
+            <!-- <Link :data="d" :class="{copyright: type!=='link'}"></Link> -->
+            <!-- {{ d.label }} {{ d.value }} -->
+                <Link :data="d" :class="d.type"></Link>
+        </dd>
     </div>
 </dl>
 
 </template>
 <script>
 import { about } from './data';
-
+import Link from '@/components/Link.vue';
 export default{
     name:'Foot',
+    components:{
+        Link
+    },
     data(){
         return {
             about
@@ -37,11 +45,21 @@ dl{
             line-height: var(--font-max);
             font-size: var(--font-small);
             white-space: nowrap;
+
         }
-        .copyright{
-            color:var(--gray6);
-            user-select: none;
-        }
+
+    }
+    .link, .text, .watermark{
+        color: var(--gray6);
+    }
+    .link:hover{
+        color: var(--green3);
+    }
+    .text{
+        cursor: text;
+    }
+    .watermark{
+        user-select: none;
     }
 }
 </style>

@@ -8,7 +8,7 @@
         <div class="right">
             <ul>
                 <li v-for="nav in navList" class="nav-item">
-                  <router-link :to="{path: nav.url, hash:'#main'}">
+                  <router-link :to="{path: nav.url, hash:nav.hash}">
                     <!-- <a href="javascript: void(0);">nav.url-->
                         {{ nav.title }}
                         <div class="bottom-line"></div>

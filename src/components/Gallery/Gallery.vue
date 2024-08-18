@@ -10,7 +10,7 @@
 </template>
 <script setup>
 import { images } from "./data";
-import { defineEmits, ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import emitter from "@/utils/emitter";
 onMounted(()=>{
     emitter.emit("hide-navbar");
