@@ -72,6 +72,7 @@ export default {
     // height: 100vh;
     padding: var(--padding-large) var(--padding-default);
     background-color: rgba(255,255,255,0.88);
+    overflow: hidden;
     // backdrop-filter: blur(var(--blur-large));
 }
 .dark .main {

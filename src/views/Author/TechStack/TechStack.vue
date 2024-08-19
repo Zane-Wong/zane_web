@@ -11,7 +11,7 @@
 <script setup>
 import {computed} from "vue";
 import SectionTitle from "@/components/SectionTitle.vue";
-import Cube from "@/components/Cube.vue";
+import Cube from "@/components/Cube/Cube.vue";
 import { techs } from './data'; 
 let nums = computed(()=>{
     return techs[0].length || 3;
@@ -28,7 +28,7 @@ let nums = computed(()=>{
     transform: translateX(-50%);
     div{
         position: absolute;
-        // background-color: blue; 
+        // background-color: blue;
     }
 }
 </style>

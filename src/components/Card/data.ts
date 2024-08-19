@@ -20,7 +20,7 @@ export const projects: any[] = [
     { 
         title: 'Flappy Bird', 
         coverImg:'https://playfreeonline32.com/wp-content/uploads/Flappy-Bird-Online-%E2%80%A2-Play-Flappy-Bird-Games-for-Free-Today.jpeg', 
-        url:'file:///D:/wangzhuo/documents/projects/web/FlappyBird/FlappyBird.html',
+        url:'flappybird',
         subTitle: 'H5游戏', 
         description: '用H5和JavaScript实现的FlappyBird小游戏', 
         tags:['HTML','JS','CSS','游戏'], 
@@ -29,7 +29,7 @@ export const projects: any[] = [
     { 
         title: '贪食蛇', 
         coverImg:'https://img.zcool.cn/community/01dcf1554be63a000001bf7268fd65.jpg@1280w_1l_2o_100sh.jpg', 
-        url:'file:///D:/wangzhuo/documents/projects/web/Snake/Snake0.3.html',
+        url:'snake',
         subTitle: 'H5游戏', 
         description: '用H5和JavaScript实现的贪食蛇小游戏', 
         tags:['HTML','JS','CSS','游戏'], 

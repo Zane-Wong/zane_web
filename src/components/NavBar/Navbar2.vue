@@ -2,7 +2,7 @@
     <div class="navbar" :class="{fixed: isFixed}" :style="{opacity: navbarOpacity}">
         <div class="left">
             <div class="logo nav-item">
-                <img src="../../assets/img/avatar.png" alt="zane">
+                <img src="../../../public/img/avatar.png" alt="zane">
             </div>
         </div>
         <div class="right">
@@ -42,11 +42,11 @@ export default {
         window.addEventListener('scroll', this.handleScroll);
         emitter.on( "hide-navbar" , () => {
             this.navbarOpacity=0;
-            this.$el.style.top = -1*this.navbarHeight; 
+            // this.$el.style.top = -1*this.navbarHeight; 初始高度为-
         })
         emitter.on( "show-navbar" , () => {
             this.navbarOpacity = 1;
-            this.$el.style.top = 0;
+            // this.$el.style.top = 0;
         })
     },
     beforeDestroy(){/** ************* */
@@ -61,12 +61,12 @@ export default {
             // console.log(scrollTop);
             if(scrollTop > this.navbarHeight){
                 // this.isFixed = true;
-                this.$el.style.top = 0;
+                // this.$el.style.top = 0; 距离上边
                 this.navbarOpacity = 1;
             }else{
                 // this.isFixed = false;
                 this.navbarOpacity = scrollTop / this.navbarHeight;
-                this.$el.style.top = `${scrollTop - this.navbarHeight}px`;                                                                                                                                                                                                                                                 
+                // this.$el.style.top = `${scrollTop - this.navbarHeight}px`;
             }
         }
     }

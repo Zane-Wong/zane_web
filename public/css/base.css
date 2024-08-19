@@ -55,8 +55,8 @@ img {
 /*button*/
 .button {
     border:0;
-    background-color:none;
-    outline:none;
+    /*background-color: none;*/
+    outline: none;
     -webkit-appearance: none;/*用于IOS下移除原生样式*/
 }
 

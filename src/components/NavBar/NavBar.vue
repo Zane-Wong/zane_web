@@ -2,7 +2,7 @@
     <div class="nav" :style="scrolling">
         <div class="left">
             <div class="nav-item logo">
-                <img src="../../assets/img/avatar.png" alt="zane">
+                <img src="../../../public/img/avatar.png" alt="zane">
             </div>
         </div>
         <div class="right">

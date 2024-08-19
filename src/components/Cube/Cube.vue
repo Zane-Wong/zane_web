@@ -6,7 +6,7 @@
             </div>
             <div>
                 <!-- <span :style="{'--level-img': '../assets/img/'+level.label+'-大号.png'}">{{ level.label }}</span> -->
-                <span :style="{backgroundImage: 'url(' +'src/assets/img/'+level.label+'-大号.png)'}"></span><!-- {{ level.label }} -->
+                <span :style="{backgroundImage: 'url(' +'img/'+level.label+'-大号.png)'}"></span><!-- {{ level.label }} -->
             </div>
             <div :style="{backgroundImage: 'url(' + data.img + ')'}"></div>
             <div></div>

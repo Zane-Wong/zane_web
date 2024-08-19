@@ -11,6 +11,7 @@ const router =createRouter({
     history: createMemoryHistory(),
     routes,
     scrollBehavior(to, from, savedPosition){
+        from;
         if (savedPosition) {
             return savedPosition
         }
@@ -18,7 +19,7 @@ const router =createRouter({
             return { 
                 el: to.hash,
                 behavior: 'smooth',
-                top: 20
+                top: 80
             };
         }       
     }
