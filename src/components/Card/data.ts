@@ -2,7 +2,7 @@ export const projects: any[] = [
     { 
         title: '标题', 
         coverImg:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg', 
-        url:'to project',
+        url:'www.qq.com',
         subTitle: '子标题', 
         description: '描述特别长的情况如何，让我试一下，再长点，再仓点仓带你按时发放阿达阿斯蒂芬啊啊打发打发 阿斯顿发放', 
         tags:[1,2,3], 
@@ -11,7 +11,7 @@ export const projects: any[] = [
     { 
         title: '标题', 
         coverImg:'https://www.calibrate.be/sites/default/files/styles/large/public/2020-01/vue-01.png?itok=XlGRr8mq', 
-        url:'to project',
+        url:'https://www.baidu.com',
         subTitle: '子标题', 
         description: '描述特别长的情况如何，让我试一下，再长点，再仓点仓带你按时发放阿达阿斯蒂芬啊啊打发打发 阿斯顿发放', 
         tags:[1,2,3], 
@@ -20,7 +20,7 @@ export const projects: any[] = [
     { 
         title: 'Flappy Bird', 
         coverImg:'https://playfreeonline32.com/wp-content/uploads/Flappy-Bird-Online-%E2%80%A2-Play-Flappy-Bird-Games-for-Free-Today.jpeg', 
-        url:'to flappy bird',
+        url:'file:///D:/wangzhuo/documents/projects/web/FlappyBird/FlappyBird.html',
         subTitle: 'H5游戏', 
         description: '用H5和JavaScript实现的FlappyBird小游戏', 
         tags:['HTML','JS','CSS','游戏'], 

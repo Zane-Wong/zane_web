@@ -1,6 +1,6 @@
 <template>
     <li>
-        <a :href="data.url" target="_blank"> 
+        <a @click="jump(data.url)"> 
             <!-- rel="noopener noreferrer" -->
             <div class="cover-img">
                 <div class="cover-mask"></div>
@@ -29,6 +29,13 @@ export default{
             // title: 'tilte',
             // subTitle: 'subTitle',
             // description: 'description'
+        }
+    },
+    methods:{
+        jump(url:string){
+            if(url.includes('://'))
+                window.open(url,'_blank');
+            else window.open('http://'+url,'_blank');
         }
     }
 }
@@ -94,7 +101,8 @@ li{
 }
 li:hover{
     transform: translateY(calc(-1*var(--font-default)));
-    /* cursor: pointer; */
+    cursor: pointer;
+    user-select: none;
 }
 .dark li{
     background-color: rgba(160,160,160,0.16);
