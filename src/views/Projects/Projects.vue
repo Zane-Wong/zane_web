@@ -7,9 +7,9 @@
     </section>
 </template>
 <script setup>
-import { projects } from '../../components/Card/data';
-import Card from '../../components/Card/Card.vue';
-import SectionTitle from '../../components/SectionTitle.vue';
+import { projects } from '@/components/Card/data';
+import Card from '@/components/Card/Card.vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 </script>
 <style lang="scss">
 .card-list{
