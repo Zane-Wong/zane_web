@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snake</title>
+	<link rel="stylesheet" type="text/css" href="Snake.css">
+</head>
+<body>
+	<div class="map">Coding by WangZhuo</div>
+	<div style="text-align: center;margin:1rem;">
+		<button id='testBtn'>🔁restart</button>
+	</div>
+	<script type="text/javascript" src="Tool.js"></script>
+	<script type="text/javascript">
+		/**
+		 *@author: wang zhuo
+		 *@作   者: 王   卓
+		 *@date: 2024/01/14
+		 */
+
+		//游戏对象类型
+		class Scene{
+			constructor(){
+				this.map=document.querySelector('.map');
+				this.width=this.map.clientWidth;
+				this.height=this.map.clientHeight;
+				this.blockWidth=30;
+				this.score=0;
+			}
+			//蛇身加长
+			elongate() {
+				var len = this.snake.length;
+				var lastBody = this.snake[len-1];
+				var lastBodyElm = lastBody.elm;
+				var x,y;
+				if(lastBody.direction === 'left' || lastBody.direction === 'right'){
+					if(lastBody.direction === 'right'){
+						x=lastBodyElm.offsetLeft-this.blockWidth;
+					}else{
+						x=lastBodyElm.offsetLeft+this.blockWidth;
+					}
+					y=lastBodyElm.offsetTop;
+				}else{
+					if(lastBody.direction === 'up'){
+						y=lastBodyElm.offsetTop+this.blockWidth;
+					}else{
+						y=lastBodyElm.offsetTop-this.blockWidth;
+					}
+					x=lastBodyElm.offsetLeft;
+				}
+				var body = new Body({
+					direction:lastBody.direction,
+					x:x,
+					y:y
+				});
+				this.snake.push(body);
+				this.addToMap(body);
+			}
+			//得分
+			addScore(){
+				this.score++;
+				var food_x,food_y;
+
+				food_x = random(0,this.width/this.blockWidth)*this.blockWidth;
+				food_y = random(0,this.height/this.blockWidth)*this.blockWidth;
+				console.log(this.width/this.blockWidth*(this.height/this.blockWidth))
+				if(this.score<parseInt(this.width/this.blockWidth*(this.height/this.blockWidth))//判断蛇是否占据整个地图
+				) {
+					while(// 保证食物生成位置不在蛇身上
+						!this.snake.every(
+							(body)=>{ return body.x!=food_x || body.y!=food_y; } 
+						)
+					){
+						food_x = random(0,this.width/this.blockWidth)*this.blockWidth;
+						food_y = random(0,this.height/this.blockWidth)*this.blockWidth;
+					}
+				}else{
+					alert("恭喜你赢得了这个游戏！\n得分："+this.score)
+					this.end();
+				}
+
+				this.food.x=food_x;
+				this.food.y=food_y;
+				this.elongate();
+				this.refresh(this.food);
+
+				//if(this.interval>100 && this.score %10 === 0){this.interval-=100;console.log("speed up~")}
+			}
+			//添加到DOM
+			addToMap(obj){
+				this.map.append(obj.elm);
+			}
+			//从DOM中删除
+			delFromMap(obj){
+				// console.log(obj.elm)
+				this.map.removeChild(obj.elm);
+			}
+			//更新DOM
+			refresh(obj){
+				obj.refresh();
+			}
+			//操作响应
+			control(e){
+				// console.log(this instanceof Scene)
+				switch(e.keyCode){
+					case 69://e
+					case 38://↑
+					if(this.head.direction!=='down') this.head.up();
+					else console.log('🚫👆')
+					break;
+					case 83://s
+					case 37://←
+					if(this.head.direction!=='right') this.head.left();
+					else console.log('🚫👈')
+					break;
+					case 68://d
+					case 40://↓
+					if(this.head.direction!=='up') this.head.down();
+					else console.log('🚫👇')
+					break;
+					case 70://f
+					case 39://→
+					if(this.head.direction!=='left') this.head.right();
+					else console.log('🚫👉')
+					break;
+					default:
+					alert("⏸游戏暂停\n操作方式：\nE或↑键：向上👆\nD或↓键：向下👇\nS或←键：向左👈\nF或→键：向右👉\n");
+					break;
+				}
+				this.refresh(this.head);
+			}
+			//碰撞检查
+			regionCheck(obj){
+				// let scene = this;
+				// console.log(this instanceof Scene);//false
+				var head = scene.snake[0];
+				if(obj instanceof Body){
+					if(obj.x <= head.x+scene.blockWidth/2 && head.x+scene.blockWidth/2 <= obj.x + scene.blockWidth && obj.y <= head.y+scene.blockWidth/2 && head.y+scene.blockWidth/2 <= obj.y + scene.blockWidth){
+						return false;// 蛇头碰到蛇身，游戏结束
+					}
+				}
+				if(head.x<0||head.y<0||head.x>scene.width-scene.blockWidth||head.y>scene.height-scene.blockWidth){
+					return false; //碰到地图编译，游戏结束
+				}
+				if(obj instanceof Food){
+					if(obj.x <= head.x + scene.blockWidth/2 && head.x + scene.blockWidth <= obj.x + scene.blockWidth && obj.y <= head.y + scene.blockWidth/2 && head.y + scene.blockWidth/2 <= obj.y + scene.blockWidth){
+
+						scene.addScore();//吃到食物，加分
+					}
+				}
+				return true;
+			}
+			//蛇移动
+			moveSnake(){
+				// console.log(this instanceof Scene)//true
+
+				var head = this.snake[0];
+				var len = this.snake.length;
+
+				var body;
+				if(len>1){
+					var tail = this.snake[len-1];
+					this.delFromMap(tail);
+					this.snake.splice(len-1,1);
+					body = new Body({x:head.x,y:head.y,direction:head.direction});
+					this.snake.splice(1,0,body);
+					
+				}
+				switch(head.direction){
+					case 'up':
+					head.y -= this.blockWidth;
+					break;
+					case 'down':
+					head.y += this.blockWidth;
+					break;
+					case 'left':
+					head.x -= this.blockWidth;
+					break;
+					case 'right':
+					head.x += this.blockWidth;
+					break;
+				}
+				this.refresh(head);
+				if(len>1){this.addToMap(body);}
+				if(len>2)if(this.snake.slice(2).every(this.regionCheck)); else return false;
+				if(this.regionCheck(this.food)); else return false;
+				
+				return true;
+			}
+			//初始化
+			init(){
+				this.snake=[];
+				this.head=new Head();
+				this.food=new Food();
+				this.snake.push(this.head);
+				this.addToMap(this.head);
+				this.addToMap(this.food);
+				//document.addEventListener('keydown',(e)=>{this.control(e);},this);
+				document.onkeydown=(e)=>{this.control(e);}
+				this.score=0;
+				this.interval=200;
+			}
+			//重置环境
+			reset(){
+
+				this.delFromMap(this.food)
+				for(let i in this.snake){
+					this.delFromMap(this.snake[i]);
+				}
+				this.init();
+			}
+			//运行游戏
+			run(){
+				if(confirm("点击确认开始游戏")){
+					let that=this;
+					this.mainTimer = setInterval(function(){
+						// console.log(this instanceof Scene)//false
+						if(that.moveSnake()){ }
+						else{
+							if(confirm(`您的得分：${that.score}`)){
+								that.reset();
+							}else{
+								that.end();
+							}
+						};
+					},this.interval);
+				}				
+			}
+
+			//结束游戏
+			end(){
+				clearInterval(this.mainTimer);
+				document.onkeydown=null;
+				this.delFromMap(this.food)
+				for(let i in this.snake){
+					this.delFromMap(this.snake[i]);
+				}
+			}
+		}
+		//游戏对象类型
+		class GameObj{
+			constructor(name,x,y){
+				this.name=name;
+				this.x=x;
+				this.y=y;
+				this.elm=gameObjFactory(name,x,y);
+			}
+			refresh(){
+				this.elm.style.left=this.x+'px';
+				this.elm.style.top=this.y+'px';
+			}
+		}
+		//食物类型
+		class Food extends GameObj{
+			constructor(){
+				var x=random(0,scene.width/scene.blockWidth)*scene.blockWidth;
+				var y=random(0,scene.height/scene.blockWidth)*scene.blockWidth;
+				super('food',x,y);
+			}
+		}
+		//蛇头类型
+		class Head extends GameObj{
+			constructor(){
+				var x=Math.floor(0.25*scene.width/scene.blockWidth)*scene.blockWidth;
+				var y=Math.floor(0.5*scene.height/scene.blockWidth)*scene.blockWidth;
+				super('head',x,y);
+				this.direction='right';
+			}
+			up(){this.direction='up';}
+			down(){this.direction='down';}
+			left(){this.direction='left';}
+			right(){this.direction='right';}
+			refresh(){
+				this.elm.style.left=this.x+'px';
+				this.elm.style.top=this.y+'px';
+				var degree = 0;
+				switch(this.direction){
+					case 'right':
+					degree=0;
+					break;
+					case 'down':
+					degree=90;
+					break;
+					case 'left':
+					degree=180;
+					break;
+					case 'up':
+					degree=270;
+					break;
+				}
+				this.elm.style.transform=`rotate(${degree}deg)`;
+				// console.log('head rendered')
+			}
+		}
+		//蛇身类型
+		class Body extends GameObj{
+			constructor(arg){
+				super('body',arg.x,arg.y);
+				this.direction=arg.direction;
+			}
+		}
+
+		var scene=new Scene();
+		scene.init();
+		scene.run();
+
+		//将testBtn元素.style.visibility设为可见时，要测试哪个方法就在onclick中调用哪个方法
+		var testBtn = document.querySelector("#testBtn");
+		testBtn.innerText="🔁重新开始";
+		testBtn.style.visibility="visible";
+		// createBodyBtn.style.visibility='visible';
+		testBtn.onclick = function (argument) {
+			// scene.end()
+			location.reload(false);
+		}
+	</script>
+</body>
+</html>

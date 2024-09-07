@@ -12,7 +12,7 @@ export const about = [
         data:[
             {label:'',value:'mail_zhuo@163.com',type:'text'},
             {label:'GitHub',value:'https://github.com/Zane-Wong',type:'link'},
-            {label:'个人主页',value:'https://github.com/Zane-Wong',type:'link'}
+            {label:'个人主页',value:'http://120.79.71.94/',type:'link'}
         ]
     },
     // {

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FlappyBird</title>
+	<style type="text/css">
+		html{
+			height: 100%;
+		}
+		body{
+			margin: 0;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#game_scene{
+			width: 800px;
+			min-width: 800px;
+			height: 600px;
+			background: url("sky.png") repeat;
+			background-color: lightgray;
+			position:relative;
+			overflow: hidden;
+			position: relative;
+		}
+		#dlg{
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,.5);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			backdrop-filter:blur(5px);
+			position: absolute;
+			z-index: 100;
+		}
+		#menu{
+			box-sizing: border-box;
+			padding: 15px;
+			background-color: orange;
+			border-radius: 10px;
+			width: 300px;
+			color: white;
+			border: 2px solid black;
+			text-shadow: 2px 0 2px black;
+		}
+		#menu button{
+			font-size: 20px;
+			font-weight: bold;
+			margin-top: 10px;
+			padding:10px 20px;
+			border-radius: 5px;
+			background-color: yellow;
+			color:darkorange;
+			outline:none;
+		}
+		#bird_img{
+			width: 32px;
+			height: 32px;
+			position: absolute;
+			padding:0 1px;
+			top:200px;
+			left:200px;
+			background:url("birds.png") -8px -7px;
+			background-repeat: no-repeat;
+			/*background:url("images/birds.png") no-repeat -60px -7px;*/
+			/*background:url("images/birds.png") no-repeat -113px -7px;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="game_scene">
+		<div id="dlg">
+			<div id="menu">
+				<h2>FlappyBird</h2>
+				<h3>点击按钮▶开始游戏</h3>
+				<div><button>▶</button></div>
+				<div><button></button></div>
+			</div>
+			<div style="color:lightgray;position:absolute;bottom:5px; right: 5px; user-select:none;">Coding by WangZhuo</div>
+		</div>
+
+		<div id="bird_img">
+		</div>		
+	</div>
+	<script type="text/javascript">
+		var map = document.querySelector("#game_scene");
+		var dlg=document.querySelector("#dlg");
+		var menu=document.querySelector("#menu");
+		function hideDlg(){
+			dlg.style.visibility="hidden";
+		}
+		hideDlg();
+
+		function showDlg(parameter){
+			const{title,desc,btns}=parameter;
+			menu.querySelector("h2").innerText=title;
+			menu.querySelector("h3").innerText=desc;
+			var op_btns = menu.querySelectorAll("button");
+			for(let i in op_btns){
+				if(i<btns.length){
+					op_btns[i].innerText=btns[i].content;
+					op_btns[i].onclick=btns[i].click;
+				}else{
+					op_btns[i].innerText="";
+					op_btns[i].onclick=null;
+					try{
+						op_btns[i].parentElement.style.visibility="hidden";
+					}catch(TypeError){
+					}
+				}
+			}
+			dlg.style.visibility="visible";
+		}
+        
+        var scoreboard_h=190;
+		function createPipe(x){
+			var up_pipe_height = Math.floor(Math.random()*200+100);
+			var up_pipe = document.createElement("div");
+			up_pipe.style.width="52px";
+			up_pipe.style.height=up_pipe_height+"px";
+			up_pipe.style.background="url(pipe2.png) no-repeat center bottom"
+			up_pipe.style.position="absolute";
+			up_pipe.style.top=0;
+			up_pipe.style.left=x+"px";
+			map.appendChild(up_pipe);
+
+			var scoreboard=document.createElement('div');
+			scoreboard.style.width='52px'
+			// scoreboard.style.backgroundColor="skyblue";
+			scoreboard.style.height=scoreboard_h+'px';
+			scoreboard.style.position='absolute';
+			scoreboard.style.left=x+"px";
+			scoreboard.style.top=up_pipe_height+'px';
+			map.appendChild(scoreboard);
+
+			var down_pipe = document.createElement("div");
+			down_pipe.style.width="52px";
+			down_pipe.style.height=map.offsetHeight-scoreboard.offsetHeight-up_pipe_height+"px";
+			down_pipe.style.background="url(pipe1.png) no-repeat center top"
+			down_pipe.style.position="absolute";
+			down_pipe.style.bottom=0;
+			down_pipe.style.left=x+"px";
+			map.appendChild(down_pipe);
+			return {
+				x:x,
+				up_pipe:up_pipe,
+				down_pipe:down_pipe,
+				scoreboard:scoreboard
+			}
+		}
+		var arrs = [];
+		
+		function changeHeight(pipe){
+			var new_height = Math.floor(Math.random()*200+100);
+			pipe.up_pipe.style.height=new_height+'px';
+			pipe.scoreboard.style.top=new_height+'px';
+			pipe.scoreboard.style.height = scoreboard_h+'px';
+			pipe.down_pipe.style.height=map.offsetHeight-scoreboard_h-new_height+'px';
+			// console.log(new_height);
+		}
+
+		function movePipe(d){
+			for(let i in arrs){
+				let p = arrs[i];
+				p.x -= d;
+				p.up_pipe.style.left=p.x+'px';
+				p.down_pipe.style.left=p.x+'px';
+				p.scoreboard.style.left=p.x+'px';
+				// console.log(p);
+				if(p.x<-p.up_pipe.offsetWidth){
+					p.x=map.offsetWidth;
+					changeHeight(p);
+				}
+			}
+		}
+
+		var bird_img = document.querySelector("#bird_img");
+		
+		var bird = {
+			x:bird_img.offsetLeft,
+			y:bird_img.offsetTop,
+			speedX:0,
+			speedY:0,
+			a:0
+		};
+
+		for(let i=0;i<3;i++){
+			arrs.push(createPipe(800+300*i));
+		}
+
+		// var pipe_timer = setInterval(movePipe,17,bird.speedX)
+		var score = 0;
+		var interval =17;
+		const score_music = new Audio('sfx_point.ogg');
+		const end_music = new Audio('sfx_die.ogg');
+		var game_scene = document.querySelector("#game_scene");
+		var scene = {
+			x:0
+		};
+
+		var scene_timer = setInterval(function(){
+			scene.x += (-2);
+			if(scene.x<-5*800){
+				scene.x=800;
+				// console.log(scene.x);
+			}
+			game_scene.style.backgroundPositionX = scene.x+"px";
+			drop();
+			movePipe(bird.speedX);
+			checkFail();
+		},interval);
+
+		var bird_imgs = [-8, -60, -113];
+		var i=0;
+		var bird_timer = setInterval(function(){
+			i=i%bird_imgs.length;
+			// console.log(i);
+			bird_img.style.backgroundPositionX=bird_imgs[i]+"px";
+			i++;
+			bird.speedY+=bird.a;
+		},interval*10);
+
+		function drop(){
+			bird.y += bird.speedY;
+			bird_img.style.top = bird.y+"px";
+		}
+		var up_ = -6;
+		function rise(){
+			bird.speedY = up_;
+		}
+
+		var count = 0;
+
+		document.addEventListener("keydown",function(e){
+			if(count==0){
+				bird.speedY=4;
+				bird.speedX=3;
+				bird.a=2;
+				count++;
+			}
+			if(e.keyCode==32){
+				rise();
+			}
+			
+			// console.log(e)
+			if(e.key=='p'){
+				alert("⏸游戏暂停中，确认继续吗？")
+			}
+		});
+		
+		game_scene.onmousedown=function(){
+			if(count==0){
+				bird.speedY=4;
+				bird.speedX=3;
+				bird.a=2;
+				count++;
+			}
+			rise();
+		}
+
+		function checkTouchPipe(){
+			for(var i in arrs){
+				let p = arrs[i]
+				if(p.x <= bird.x+bird_img.offsetWidth && p.x >= bird.x-p.up_pipe.offsetWidth){
+					// console.log(arrs[i])
+					if(bird.x+bird_img.offsetWidth>p.x&&bird.y<p.up_pipe.offsetHeight||
+						 bird.x+bird_img.offsetWidth>p.x&&bird.y+bird_img.offsetHeight>p.down_pipe.offsetTop
+						){
+						return true;
+					}
+					p.scoreboard.enter_in=true;
+				}else{
+					if(p.scoreboard.enter_in){
+						score++;
+						score_music.play();
+						if(score%10==0&&scoreboard_h>90){
+							console.log("积分："+score);
+							scoreboard_h -= 10 ;
+							if(score%50==0&&up_<-5) up_++;
+							// bird.speedY +=1 ;
+							console.log("难度增加↑")
+						}
+						p.scoreboard.enter_in=false;
+					}
+				}
+			}
+			
+			return false;
+		}
+		function checkFail(){
+			if(bird.y<=0)bird.y=0;
+
+			if(bird.y>=game_scene.offsetHeight-bird_img.offsetHeight||checkTouchPipe()){
+				clearInterval(bird_timer)
+				clearInterval(scene_timer)
+				// clearInterval(pipe_timer)
+				document.onkeydown=null;
+				game_scene.onmousedown=null;
+				end_music.play();
+				showDlg({
+					title:"游戏结束",
+					desc:"得分："+score,
+					btns:[
+						{
+							content:"再来一次",
+							click:function(){
+								hideDlg();
+								window.location.reload(false);
+							}
+						},
+					]
+				});
+			}
+		}
+
+	</script>
+</body>
+</html>

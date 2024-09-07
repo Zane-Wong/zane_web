@@ -27,9 +27,9 @@ const emit = defineEmits(['close']); // "update:visiable"
 const currentIndex = ref(props.initialIndex);
 // const show = ref(props.visiable);
 window.addEventListener('keydown',(e)=>{
-    if(e.key=='Escape') emit('close');
-    if(e.key=='ArrowRight') nextImg();
-    if(e.key=='ArrowLeft') prevImg();
+    if(e.key==='Escape') emit('close');
+    if(e.key==='ArrowRight') nextImg();
+    if(e.key==='ArrowLeft') prevImg();
 })
 function prevImg(){
     if(currentIndex.value>0){

@@ -2,7 +2,7 @@
     <div class="navbar" :class="{fixed: isFixed}" :style="{opacity: navbarOpacity}">
         <div class="left">
             <div class="logo nav-item">
-                <img src="../../../public/img/avatar.png" alt="zane">
+                <img src="/img/avatar.png" alt="zane">
             </div>
         </div>
         <div class="right">
