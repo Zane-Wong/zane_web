@@ -2,7 +2,7 @@ export const projects: any[] = [
     { 
         title: '个人网站', 
         coverImg:'https://images.viblo.asia/f71e4362-cb61-425b-9993-e75446351f78.jpg', 
-        url:'http://localhost',
+        url: import.meta.env.VITE_BASE_URL || import.meta.env.BASE_URL,
         subTitle: '基于Vue+Vite的个人网站', 
         description: '主打实用工具、个人项目、兴趣爱好等等内容的分享', 
         tags:["Vue","Vite","TS"], 
@@ -24,7 +24,7 @@ export const projects: any[] = [
         subTitle: 'H5游戏', 
         description: '用H5和JavaScript实现的FlappyBird小游戏', 
         tags:['HTML','JS','CSS','游戏'], 
-        platform:'网页'
+        platform:'H5'
     },
     { 
         title: '贪食蛇', 
@@ -33,7 +33,7 @@ export const projects: any[] = [
         subTitle: 'H5游戏', 
         description: '用H5和JavaScript实现的贪食蛇小游戏', 
         tags:['HTML','JS','CSS','游戏'], 
-        platform:'网页'
+        platform:'H5'
     },
     { 
         title: '标题', 
