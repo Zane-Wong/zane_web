@@ -1,8 +1,8 @@
 <template>
     <section id="projects">
-        <SectionTitle title="项目"></SectionTitle>
+        <SectionTitle title="个人作品"></SectionTitle>
         <ul class="card-list">
-            <Card v-for="project in projects.filter(item=>item.url)" class="m-t m-b m-l m-r" :data="project"></Card>
+            <Card v-for="project in projects.filter(item=>item.url)" class="m-t m-b m-l m-r " :data="project"></Card>
         </ul>
     </section>
 </template>
