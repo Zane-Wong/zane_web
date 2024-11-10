@@ -5,3 +5,8 @@
 <script lang="ts" setup>
 defineProps(["data"]);
 </script>
+<style>
+  a:hover{
+    color: var(--blue5)
+  }
+</style>
