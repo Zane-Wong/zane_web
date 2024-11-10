@@ -1,10 +1,10 @@
 const BaseURL = import.meta.env.VITE_BASE_URL || import.meta.env.Base_URL;
 export const about = [
     {
-        title: '© ' + new Date().getFullYear() + ' Zane',
+        title: '©' + 2024 + ' Zane',/*new Date().getFullYear()*/
         data: [
-            {label: '版权所有', value: '', type: 'watermark'},
-            {label: '备案号', value: '20240818', type: 'watermark'},
+            {label: '备案号', value: '暂未申请', type: 'watermark'},
+            {label: 'wangzhuo', value: '所有', type: 'watermark'},
             // {label:'',value:'',type:'watermark'}
         ]
     },
