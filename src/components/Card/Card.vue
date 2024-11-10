@@ -34,16 +34,23 @@ export default {
   },
   methods: {
     jump(url: string, e: Event) {
-      if (url.includes('://')) {
+      // if (url.includes('://')) {
+      e.preventDefault();
+      if(url.trim()){
+        console.log(url.trim())
         window.open(url, '_blank');
-        e.preventDefault(); // 阻止默认事件
+         // 阻止默认事件
+      }else{
+        // return false;
       }
+      // }
     }
   }
 }
 </script>
 <style scoped>
 li {
+  list-style-type:none;
   height: calc(2 * var(--height-huge));
   width: var(--width-max);
   min-width: var(--width-max);
