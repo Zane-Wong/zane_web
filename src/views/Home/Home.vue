@@ -9,6 +9,7 @@
                  <!-- <Image :data="myImgs"></Image> -->
             <!-- </section> -->
           <RouterView/>
+          <div style="height: var(--height-small)"></div>
         </main>
         <footer id="about">
             <Foot></Foot>
