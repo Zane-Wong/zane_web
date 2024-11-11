@@ -19,7 +19,7 @@
 </template>
 <script>
 // import Slogon from '../../components/Slogon.vue';
-import Slogon from "@/components/Slogon.vue";
+import Slogon from "../../components/Slogon.vue";
 import SectionTitle from '../../components/SectionTitle.vue';
 import Author from '../Author/Author.vue';
 import Foot from '../../components/Foot/Foot.vue';
