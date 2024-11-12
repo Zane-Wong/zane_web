@@ -14,7 +14,7 @@
 </template>
 <script>
 import { about } from './data';
-import Link from '@/components/Link.vue';
+import Link from '../Link.vue';
 export default{
     name:'Foot',
     components:{
@@ -29,12 +29,14 @@ export default{
 </script>
 <style lang="scss" scoped>
 dl{
-    // margin: var(--margin-large);
+    box-sizing: border-box;
+    padding: var(--padding-large);
+    margin: var(--margin-large);
     display: flex;
     justify-content: center;
-    // flex-wrap: nowrap;
+    flex-wrap: wrap;
     div{
-        // flex:1;
+         //flex:1;
         margin: calc(2*var(--margin-large)) calc(2.5*var(--margin-large));
         dt{
             font-weight: 600;
@@ -61,5 +63,18 @@ dl{
     .watermark{
         user-select: none;
     }
+}
+@media screen and (max-width: 1220px){
+  dl{
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    div{
+      //display: none;
+      //width: 500px;
+      margin-top: var(--margin-default);
+      margin-bottom: var(--margin-large);
+    }
+  }
 }
 </style>
