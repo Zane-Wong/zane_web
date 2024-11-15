@@ -1,5 +1,6 @@
 # zane_web
 个人网站
+预览地址：[zane-wong.github.io](https://zane-wong.github.io)
 
 ### 所需环境
 
