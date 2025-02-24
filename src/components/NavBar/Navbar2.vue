@@ -74,6 +74,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .fixed{
+  top: 0;
   position: fixed;
   width: 100%;
   z-index: 100;
