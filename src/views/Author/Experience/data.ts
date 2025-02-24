@@ -7,7 +7,7 @@ export let events = [
         imgs:[
 
             {desc:'描述',src:'https://img.zcool.cn/community/01iexfpkjk7v2ejgzjugvr3739.jpg?imageMogr2/auto-orient/thumbnail/1280x%3e/sharpen/0.5/quality/100/format/webp'},
-            {desc:'描述',src:'https://fds.cityu.edu.mo/uploads_thumb/page/2cb1d5280b5c67a1d901eb60eb6b583a_1000X1000.jpg'},
+            {desc:'描述',src:'https://fds.cityu.edu.mo/uploads_thumb/page/2cb1d5280b5c67a1d901eb60eb6b583a_1000X1000.jpg'},/*https://fds.cityu.edu.mo/uploads_thumb/page/2cb1d5280b5c67a1d901eb60eb6b583a_1500X1500.jpg*/
             {desc:'描述',src:'https://login.cityu.edu.mo/cas/images/background.png'}
 
         ]
@@ -31,15 +31,8 @@ export let events = [
         description: '西安市，软件工程本科',
         imgs:[
             {desc:'校门',src:'https://www.xsyu.edu.cn/__local/3/95/AF/82DBFB153D3B499A269FC6CA77B_2BA5E660_14DB3.jpg?e=.jpg'},
-            {desc:'描述',src:'https://img.picui.cn/free/2024/11/11/67312638a2f4d.jpg'},
-            {desc:'学校',src:'https://img.picui.cn/free/2024/11/11/67312639bc14f.jpg'}
-            //https://img.picui.cn/free/2024/11/11/6731263659265.jpg
-            // https://img.picui.cn/free/2024/11/11/6731263661b10.jpg
-            // https://img.picui.cn/free/2024/11/11/67312636646f1.jpg
-            // https://img.picui.cn/free/2024/11/11/6731263660b60.jpg
-            // https://img.picui.cn/free/2024/11/11/673126365d407.jpg
-            // https://img.picui.cn/free/2024/11/11/67312638a2f4d.jpg
-            // https://img.picui.cn/free/2024/11/11/67312639bc14f.jpg
+            {desc:'学校',src:'https://www.xsyu.edu.cn/__local/D/47/67/475E00A000E1567B55A1EB316C4_A9D92123_3DEC9.jpg?e=.jpg'},
+            {desc:'描述',src:'https://www.xsyu.edu.cn/__local/6/20/61/1A712CA6C9029F344DCFCD9704C_84F1D8DB_39754.jpg?e=.jpg'}
         ]
 
     },

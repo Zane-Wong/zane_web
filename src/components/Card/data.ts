@@ -47,13 +47,7 @@ export const projects: any[] = [
     {
         title: '“魔镜”小程序',
         url:'https://gitee.com/zane_wong/wechat-applet.git',
-        coverImg:'https://img.picui.cn/free/2024/11/11/67310f72e5746.png',
-        // https://img.picui.cn/free/2024/11/11/67311477bb151.png
-        // https://img.picui.cn/free/2024/11/11/67310ea2610aa.png
-        // https://img.picui.cn/free/2024/11/11/6731147970872.png
-        // https://img.picui.cn/free/2024/11/11/6731147856aed.png
-        // https://img.picui.cn/free/2024/11/11/673114788e3a5.png
-        // https://img.picui.cn/free/2024/11/11/67311478a53d3.png
+        coverImg:'https://s21.ax1x.com/2024/11/30/pA5HiNQ.png',
         subTitle: 'AI测肤小程序',
         description: '参加C4大赛的作品，该小程序可以通过拍照对人脸肤质进行分析，可视化显示各项指标，推荐护肤产品，发表护肤经验等等。',/*开发文档：https://blog.csdn.net/m0_46332820/article/details/126365454*/
         tags:["小程序","C4大赛","AI测肤"],
